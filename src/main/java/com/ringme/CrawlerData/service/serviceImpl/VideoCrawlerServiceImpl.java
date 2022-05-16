@@ -26,7 +26,7 @@ public class VideoCrawlerServiceImpl {
 
     private static Logger logger = Logger.getLogger(VideoCrawlerServiceImpl.class);
 
-    @Scheduled(fixedDelay = 60000, initialDelay = 1000) // after run 5s - method is called - repeat method 5p
+    @Scheduled(fixedDelay = 360000, initialDelay = 1000) // after run 5s - method is called - repeat method 5p
     public void uploadVideoCrawler() {
         List<Video_crawler_info> video_crawler_infos = videoCrawlerDao.getVideoNotCrawler();
         logger.info(video_crawler_infos);
@@ -100,7 +100,7 @@ public class VideoCrawlerServiceImpl {
     }
 
     private void crawlerListVideoYoutube(Video_crawler_info video) {
-        String commandTemplate = "youtube-dl --skip-download --flat-playlist --dump-json --playlist-start 1 --playlist-end 5 %SOURCE_PATH%"; //--sleep-interval 360
+        String commandTemplate = "youtube-dl --skip-download --flat-playlist --dump-json --playlist-start 1 --playlist-end 240 %SOURCE_PATH%"; //--sleep-interval 360
         String command = commandTemplate.replace("%SOURCE_PATH%", video.getUrl());
         try {
             Process proc = Runtime.getRuntime().exec(command);
