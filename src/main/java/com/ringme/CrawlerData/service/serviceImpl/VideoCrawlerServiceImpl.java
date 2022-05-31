@@ -17,6 +17,8 @@ import org.springframework.web.client.RestTemplate;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 @Service
 public class VideoCrawlerServiceImpl {
@@ -26,12 +28,16 @@ public class VideoCrawlerServiceImpl {
 
     private static Logger logger = Logger.getLogger(VideoCrawlerServiceImpl.class);
 
-    @Scheduled(fixedDelay = 360000, initialDelay = 1000) // after run 5s - method is called - repeat method 5p
+    private BlockingQueue<Video_crawler_info> queue = new ArrayBlockingQueue<>(10000);
+
+    @Scheduled(fixedDelay = 3600000, initialDelay = 1000) // after run 5s - method is called - repeat method 5p
     public void uploadVideoCrawler() {
         List<Video_crawler_info> video_crawler_infos = videoCrawlerDao.getVideoNotCrawler();
+        queue.addAll(video_crawler_infos);
         logger.info(video_crawler_infos);
+        Video_crawler_info videoCrawlerInfo;
+        while ((videoCrawlerInfo=queue.poll()) != null ) {
 
-        for (Video_crawler_info videoCrawlerInfo : video_crawler_infos) {
             if (videoCrawlerInfo.getType().equals("Facebook")) {
                 videoCrawlerInfo.setStatus(1); // status downloading
                 videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
@@ -54,10 +60,15 @@ public class VideoCrawlerServiceImpl {
             } else if (videoCrawlerInfo.getType().equals("Youtube_channel")) {
                 videoCrawlerInfo.setStatus(1);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-                crawlerListVideoYoutube(videoCrawlerInfo);
 
-                videoCrawlerInfo.setStatus(2);
-                videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
+                int v=crawlerListVideoYoutube(videoCrawlerInfo);
+                if(v==1){
+                    videoCrawlerInfo.setStatus(2);
+                    videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
+                }else {
+                    videoCrawlerInfo.setStatus(3);
+                    videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
+                }
             } else {
                 videoCrawlerInfo.setStatus(3);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
@@ -99,7 +110,7 @@ public class VideoCrawlerServiceImpl {
         return video;
     }
 
-    private void crawlerListVideoYoutube(Video_crawler_info video) {
+    private int crawlerListVideoYoutube(Video_crawler_info video) {
         String commandTemplate = "youtube-dl --skip-download --flat-playlist --dump-json --playlist-start 1 --playlist-end 240 %SOURCE_PATH%"; //--sleep-interval 360
         String command = commandTemplate.replace("%SOURCE_PATH%", video.getUrl());
         try {
@@ -120,7 +131,7 @@ public class VideoCrawlerServiceImpl {
             logger.info("Test|idVide|DATA|" + idVideo);
 
             for (String id : idVideo) {
-                String commandTemplate1 = "youtube-dl -o /home/anhquan/Video/%(title)s.%(ext)s  %SOURCE_PATH%"; //--sleep-interval 360
+                String commandTemplate1 = "youtube-dl -o /home/anhquan/Video/%(title)s.%(ext)s --sleep-interval 300  %SOURCE_PATH%"; //--sleep-interval 360
                 String command1 = commandTemplate1
                         .replace("%SOURCE_PATH%", "https://www.youtube.com/watch?v=" + id);
                 logger.info("link : " + command1);
@@ -153,6 +164,7 @@ public class VideoCrawlerServiceImpl {
         } catch (Exception e) {
             logger.error("Test|Exception|" + e.getMessage(), e);
         }
+        return 1;
     }
 
     private void crawlerSingleVideoYoutube(Video_crawler_info video) {
