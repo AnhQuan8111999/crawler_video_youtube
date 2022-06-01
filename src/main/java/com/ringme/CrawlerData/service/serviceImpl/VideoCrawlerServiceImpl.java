@@ -33,7 +33,7 @@ public class VideoCrawlerServiceImpl {
 
     private BlockingQueue<Video_crawler_info> queue = new ArrayBlockingQueue<>(10000);
 
-    @Scheduled(fixedDelay = 86400000, initialDelay = 1000) // after run 1s - method is called - repeat method 24h
+    @Scheduled(fixedDelay = 120000, initialDelay = 1000) // after run 1s - method is called - repeat method 24h
     public void uploadVideoCrawler() {
         List<Video_crawler_info> video_crawler_infos = videoCrawlerDao.getVideoNotCrawler();
         queue.addAll(video_crawler_infos);
@@ -143,7 +143,7 @@ public class VideoCrawlerServiceImpl {
             logger.info("IdVide|DATA|" + idVideo);
 
             for (String id : idVideo) {
-                String commandTemplate1 = "youtube-dl -o D:\\video/%(title)s.%(ext)s --sleep-interval 60 %SOURCE_PATH%"; //--sleep-interval 360
+                String commandTemplate1 = "youtube-dl -o /home/anhquan/Video/%(title)s.%(ext)s --sleep-interval 60 %SOURCE_PATH%"; //--sleep-interval 360
                 String command1 = commandTemplate1
                         .replace("%SOURCE_PATH%", "https://www.youtube.com/watch?v=" + id);
                 logger.info("link : " + command1);
@@ -204,9 +204,15 @@ public class VideoCrawlerServiceImpl {
                     mediaPath = path;
                 }
             }
+            logger.info("Test|mediaPath|DATA|" + mediaPath);
+            Video_crawler_info videoCrawler = new Video_crawler_info();
             int count1 = mediaPath.indexOf(":");
-            video.setMedia_path(mediaPath.substring(count1 + 1).trim());
-            video.setTitle(video.getTitle() + ".mp4");
+            videoCrawler.setMedia_path(mediaPath.substring(count1 + 1).trim());
+            int count2 = mediaPath.lastIndexOf("\\");
+            videoCrawler.setTitle(Validation.validateFileName(mediaPath.substring(count2 + 1).trim()));
+            logger.info("video title : " + videoCrawler.getTitle());
+            videoCrawler.setMsisdn(video.getMsisdn());
+            videoCrawler.setCategoryId(video.getCategoryId());
             int result=callAPIUpload(video);
             if(result==0){
                 return 0;
