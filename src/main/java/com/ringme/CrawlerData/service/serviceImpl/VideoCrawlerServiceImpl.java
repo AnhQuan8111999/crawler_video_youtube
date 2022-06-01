@@ -1,5 +1,7 @@
 package com.ringme.CrawlerData.service.serviceImpl;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ringme.CrawlerData.dao.VideoCrawlerDao;
 import com.ringme.CrawlerData.entity.Video_crawler_info;
 import com.ringme.CrawlerData.utils.Validation;
@@ -26,11 +28,12 @@ public class VideoCrawlerServiceImpl {
     @Autowired
     private VideoCrawlerDao videoCrawlerDao;
 
+
     private static Logger logger = Logger.getLogger(VideoCrawlerServiceImpl.class);
 
     private BlockingQueue<Video_crawler_info> queue = new ArrayBlockingQueue<>(10000);
 
-    @Scheduled(fixedDelay = 3600000, initialDelay = 1000) // after run 5s - method is called - repeat method 5p
+    @Scheduled(fixedDelay = 86400000, initialDelay = 1000) // after run 1s - method is called - repeat method 24h
     public void uploadVideoCrawler() {
         List<Video_crawler_info> video_crawler_infos = videoCrawlerDao.getVideoNotCrawler();
         queue.addAll(video_crawler_infos);
@@ -53,14 +56,18 @@ public class VideoCrawlerServiceImpl {
             } else if (videoCrawlerInfo.getType().equals("Youtube_video")) {
                 videoCrawlerInfo.setStatus(1);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-                crawlerSingleVideoYoutube(videoCrawlerInfo);
-                videoCrawlerInfo.setStatus(2);
-                videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
+                int v=crawlerSingleVideoYoutube(videoCrawlerInfo);
+                if(v==1){
+                    videoCrawlerInfo.setStatus(2);
+                    videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
+                }else{
+                    videoCrawlerInfo.setStatus(3);
+                    videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
+                }
 
             } else if (videoCrawlerInfo.getType().equals("Youtube_channel")) {
                 videoCrawlerInfo.setStatus(1);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-
                 int v=crawlerListVideoYoutube(videoCrawlerInfo);
                 if(v==1){
                     videoCrawlerInfo.setStatus(2);
@@ -69,6 +76,7 @@ public class VideoCrawlerServiceImpl {
                     videoCrawlerInfo.setStatus(3);
                     videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
                 }
+
             } else {
                 videoCrawlerInfo.setStatus(3);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
@@ -79,7 +87,7 @@ public class VideoCrawlerServiceImpl {
 
     private Video_crawler_info crawlerVideoFacebook(Video_crawler_info video) {
         logger.info("Link : " + video.getUrl());
-        String commandTemplate = "youtube-dl -o /home/anhquan/Video/%(title)s.%(ext)s  %SOURCE_PATH%"; //--sleep-interval 360
+        String commandTemplate = "youtube-dl -o /home/anhquan/Video/%(title)s.%(ext)s --sleep-interval 60 %SOURCE_PATH%"; //--sleep-interval 360
         String command = commandTemplate.replace("%SOURCE_PATH%", video.getUrl());
         logger.info("comman : " + command);
         try {
@@ -123,15 +131,19 @@ public class VideoCrawlerServiceImpl {
                 lines.add(s);
             }
             List<String> idVideo = new ArrayList<>(); // find ID video
+
+            ObjectMapper objectMapper = new ObjectMapper();
+
             for (String line : lines) {
-                String lineFor[] = line.split(",");
-                String s1 = lineFor[3].substring(9, lineFor[3].length() - 1);
-                idVideo.add(s1);
+                JsonNode jsonNode = objectMapper.readTree(line);
+                logger.info("jsonNode = " + jsonNode);
+                String id = jsonNode.get("id").asText();
+                idVideo.add(id);
             }
-            logger.info("Test|idVide|DATA|" + idVideo);
+            logger.info("IdVide|DATA|" + idVideo);
 
             for (String id : idVideo) {
-                String commandTemplate1 = "youtube-dl -o /home/anhquan/Video/%(title)s.%(ext)s --sleep-interval 300  %SOURCE_PATH%"; //--sleep-interval 360
+                String commandTemplate1 = "youtube-dl -o D:\\video/%(title)s.%(ext)s --sleep-interval 60 %SOURCE_PATH%"; //--sleep-interval 360
                 String command1 = commandTemplate1
                         .replace("%SOURCE_PATH%", "https://www.youtube.com/watch?v=" + id);
                 logger.info("link : " + command1);
@@ -154,21 +166,27 @@ public class VideoCrawlerServiceImpl {
                 Video_crawler_info videoCrawler = new Video_crawler_info();
                 int count1 = mediaPath.indexOf(":");
                 videoCrawler.setMedia_path(mediaPath.substring(count1 + 1).trim());
-                int count2 = mediaPath.lastIndexOf("/");
+                int count2 = mediaPath.lastIndexOf("\\");
+                logger.info("count 2 : " + count2);
                 videoCrawler.setTitle(Validation.validateFileName(mediaPath.substring(count2 + 1).trim()));
+                logger.info("video title : " + videoCrawler.getTitle());
                 videoCrawler.setMsisdn(video.getMsisdn());
                 videoCrawler.setCategoryId(video.getCategoryId());
-                callAPIUpload(videoCrawler);
-            }
 
+                int result=callAPIUpload(videoCrawler);
+                if(result==0){
+                    return 0;
+                }
+            }
         } catch (Exception e) {
             logger.error("Test|Exception|" + e.getMessage(), e);
+            return 0;
         }
         return 1;
     }
 
-    private void crawlerSingleVideoYoutube(Video_crawler_info video) {
-        String commandTemplate = "youtube-dl -o /home/anhquan/Video/%(title)s.%(ext)s  %SOURCE_PATH%"; //--sleep-interval 360
+    private int crawlerSingleVideoYoutube(Video_crawler_info video) {
+        String commandTemplate = "youtube-dl -o D:\\video/%(title)s.%(ext)s --sleep-interval 60 %SOURCE_PATH%"; //--sleep-interval 360
         String command = commandTemplate.replace("%SOURCE_PATH%", video.getUrl());
         try {
             Process proc = Runtime.getRuntime().exec(command);
@@ -189,64 +207,75 @@ public class VideoCrawlerServiceImpl {
             int count1 = mediaPath.indexOf(":");
             video.setMedia_path(mediaPath.substring(count1 + 1).trim());
             video.setTitle(video.getTitle() + ".mp4");
-            callAPIUpload(video);
+            int result=callAPIUpload(video);
+            if(result==0){
+                return 0;
+            }
         } catch (Exception e) {
             logger.info("FALSE : " + e);
+            return 0;
         }
+        return 1;
     }
 
-    private void callAPIUpload(Video_crawler_info videoCrawler) {
+    private int callAPIUpload(Video_crawler_info videoCrawler) {
         //call API uploadvide at videovcs
-        RestTemplate rest = new RestTemplate();
-        MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
-        map.add("msisdn", videoCrawler.getMsisdn());//request parameters
-        map.add("mpw", "9EBB7AE993E7FCDFA600E108CC21A259");
-        map.add("fName", videoCrawler.getTitle());
-        map.add("uFile", new FileSystemResource(videoCrawler.getMedia_path()));
-        map.add("timestamp", System.currentTimeMillis());
-        map.add("security", "");
-        logger.info("DATA:" + map);
-        HttpHeaders headers = new HttpHeaders();//request header
-        headers.set("mocha-api", "");
-        headers.set("Accept-language", "vi");
-        HttpEntity<MultiValueMap<String, Object>> request = new HttpEntity<>(map, headers);
-        //Object obj = rest.postForEntity("http://kakoakdev.ringme.vn/video-service/v1/media/video/upload", request, Object.class);
-        Object obj = rest.postForEntity("http://freeapi.kakoak.tls.tl/video-service/v1/media/video/upload", request, Object.class);
+        try{
+            RestTemplate rest = new RestTemplate();
+            MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
+            map.add("msisdn", videoCrawler.getMsisdn());//request parameters
+            map.add("mpw", "9EBB7AE993E7FCDFA600E108CC21A259");
+            map.add("fName", videoCrawler.getTitle());
+            map.add("uFile", new FileSystemResource(videoCrawler.getMedia_path()));
+            map.add("timestamp", System.currentTimeMillis());
+            map.add("security", "");
+            logger.info("DATA:" + map);
+            HttpHeaders headers = new HttpHeaders();//request header
+            headers.set("mocha-api", "");
+            headers.set("Accept-language", "vi");
+            HttpEntity<MultiValueMap<String, Object>> request = new HttpEntity<>(map, headers);
+            //Object obj = rest.postForEntity("http://kakoakdev.ringme.vn/video-service/v1/media/video/upload", request, Object.class);
+            Object obj = rest.postForEntity("http://freeapi.kakoak.tls.tl/video-service/v1/media/video/upload", request, Object.class);
 
-        //find mediaPath of video after save on server
-        String[] strings = obj.toString().split(",");
-        int countMediaPath = strings[3].indexOf("=");
-        String mediaPathVideoOnServer = strings[3].substring(countMediaPath + 1).trim();
+            //find mediaPath of video after save on server
+            String[] strings = obj.toString().split(",");
+            int countMediaPath = strings[3].indexOf("=");
+            String mediaPathVideoOnServer = strings[3].substring(countMediaPath + 1).trim();
 
-        //call API createVideo at videovcs
-        MultiValueMap<String, Object> map1 = new LinkedMultiValueMap<String, Object>();
-        map1.add("msisdn", videoCrawler.getMsisdn());//request parameters
-        map1.add("timestamp", System.currentTimeMillis());
-        map1.add("security", "");
-        map1.add("categoryId", videoCrawler.getCategoryId());
-        map1.add("videoTitle", videoCrawler.getTitle());
-        map1.add("clientType", "clientType");
-        map1.add("revision", "revision");
-        map1.add("videoDesc", videoCrawler.getTitle());
-        map1.add("imageUrl", "/cms_upload/img/2020/12/09/unnamed-1607496877.jpg");
-        map1.add("videoUrl", mediaPathVideoOnServer);
-        logger.info("DATA:" + map1);
-        HttpHeaders headers1 = new HttpHeaders();//request header
-        headers1.set("mocha-api", "");
-        headers1.set("Accept-language", "en");
-        HttpEntity<MultiValueMap<String, Object>> request1 = new HttpEntity<MultiValueMap<String, Object>>(map1, headers);
-        Object obj1 = rest.postForEntity("http://kakoakdev.ringme.vn/video-service/v1/user/video/create", request1, Object.class);
+            //call API createVideo at videovcs
+            MultiValueMap<String, Object> map1 = new LinkedMultiValueMap<String, Object>();
+            map1.add("msisdn", videoCrawler.getMsisdn());//request parameters
+            map1.add("timestamp", System.currentTimeMillis());
+            map1.add("security", "");
+            map1.add("categoryId", videoCrawler.getCategoryId());
+            map1.add("videoTitle", videoCrawler.getTitle());
+            map1.add("clientType", "clientType");
+            map1.add("revision", "revision");
+            map1.add("videoDesc", videoCrawler.getTitle());
+            map1.add("imageUrl", "/cms_upload/img/2020/12/09/unnamed-1607496877.jpg");
+            map1.add("videoUrl", mediaPathVideoOnServer);
+            logger.info("DATA:" + map1);
+            HttpHeaders headers1 = new HttpHeaders();//request header
+            headers1.set("mocha-api", "");
+            headers1.set("Accept-language", "en");
+            HttpEntity<MultiValueMap<String, Object>> request1 = new HttpEntity<MultiValueMap<String, Object>>(map1, headers);
+            Object obj1 = rest.postForEntity("http://kakoakdev.ringme.vn/video-service/v1/user/video/create", request1, Object.class);
 
-        logger.info("Obj = " + obj);
-        logger.info("Obj1 = " + obj1);
+            logger.info("Obj = " + obj);
+            logger.info("Obj1 = " + obj1);
 
-        //delete video in local after upload success
-        File file = new File(videoCrawler.getMedia_path());
-        if (file.exists()) {
-            System.out.println("Deleted video");
-            file.delete();
-        } else {
-            System.out.println("Video not exist");
+            //delete video in local after upload success
+            File file = new File(videoCrawler.getMedia_path());
+            if (file.exists()) {
+                System.out.println("Deleted video");
+                file.delete();
+            } else {
+                System.out.println("Video not exist");
+            }
+        }catch(Exception e){
+            logger.info("APIUpload|EXCEPTION : "+ e.getMessage(),e);
+            return 0;
         }
+        return 1;
     }
 }

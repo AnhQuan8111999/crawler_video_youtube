@@ -8,10 +8,4 @@ public class Validation {
         return name.replaceAll(characterFilter ,"");
     }
 
-//    public static void main(String[] args) {
-//        String s="의대생 4학년이랑 3시간 빡공하실래요? \uD83D\uDD25 MEDICAL STUDENT 3HR STUDY WITH ME (real time, real sound)";
-//        System.out.println(s);
-//        s=s.replaceAll("[^a-zA-Z0-9]", " ");
-//        System.out.println(s);
-//    }
 }
