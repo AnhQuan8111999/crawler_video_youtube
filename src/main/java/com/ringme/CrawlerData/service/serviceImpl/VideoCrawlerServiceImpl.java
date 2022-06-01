@@ -33,11 +33,10 @@ public class VideoCrawlerServiceImpl {
 
     private BlockingQueue<Video_crawler_info> queue = new ArrayBlockingQueue<>(10000);
 
-    @Scheduled(fixedDelay = 120000, initialDelay = 1000) // after run 1s - method is called - repeat method 24h
+    @Scheduled(fixedDelay = 12000000, initialDelay = 1000) // after run 1s - method is called - repeat method 24h
     public void uploadVideoCrawler() {
         List<Video_crawler_info> video_crawler_infos = videoCrawlerDao.getVideoNotCrawler();
         queue.addAll(video_crawler_infos);
-        logger.info(video_crawler_infos);
         Video_crawler_info videoCrawlerInfo;
         while ((videoCrawlerInfo=queue.poll()) != null ) {
 
