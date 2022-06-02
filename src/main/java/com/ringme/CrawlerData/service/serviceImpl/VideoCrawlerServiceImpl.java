@@ -3,7 +3,9 @@ package com.ringme.CrawlerData.service.serviceImpl;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ringme.CrawlerData.dao.VideoCrawlerDao;
+import com.ringme.CrawlerData.dao.VideoItemDao;
 import com.ringme.CrawlerData.entity.Video_crawler_info;
+import com.ringme.CrawlerData.entity.Video_crawler_item;
 import com.ringme.CrawlerData.utils.Validation;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +30,15 @@ public class VideoCrawlerServiceImpl {
     @Autowired
     private VideoCrawlerDao videoCrawlerDao;
 
+    @Autowired
+    private VideoItemDao videoItemDao;
+
 
     private static Logger logger = Logger.getLogger(VideoCrawlerServiceImpl.class);
 
     private BlockingQueue<Video_crawler_info> queue = new ArrayBlockingQueue<>(10000);
 
-    @Scheduled(fixedDelay = 864000000, initialDelay = 1000) // after run 1s - method is called - repeat method 240h
+    @Scheduled(fixedDelay = 432000000, initialDelay = 1000) // after run 1s - method is called - repeat method 3day
     public void uploadVideoCrawler() {
         List<Video_crawler_info> video_crawler_infos = videoCrawlerDao.getVideoNotCrawler();
         queue.addAll(video_crawler_infos);
@@ -109,6 +114,12 @@ public class VideoCrawlerServiceImpl {
             video.setMedia_path(mediaPath.substring(count1 + 1).trim());
             video.setTitle(video.getTitle() + ".mp4");
 
+            Video_crawler_item videoItem=new Video_crawler_item();
+            videoItem.setUrl(video.getUrl());
+            videoItem.setTitle(video.getTitle());
+            videoItem.setVideoInfo(video);
+            videoItemDao.saveVideoItem(videoItem);
+
             callAPIUpload(video);
         } catch (Exception e) {
             logger.info("Download|Exception| " + e.getMessage(), e);
@@ -183,6 +194,12 @@ public class VideoCrawlerServiceImpl {
                 videoCrawler.setMsisdn(video.getMsisdn());
                 videoCrawler.setCategoryId(video.getCategoryId());
 
+                Video_crawler_item videoItem=new Video_crawler_item();
+                videoItem.setUrl(url);
+                videoItem.setTitle(videoCrawler.getTitle());
+                videoItem.setVideoInfo(video);
+                videoItemDao.saveVideoItem(videoItem);
+
                 int result = callAPIUpload(videoCrawler);
                 if (result == 0) {
                     return 0;
@@ -236,6 +253,13 @@ public class VideoCrawlerServiceImpl {
             logger.info("video title : " + videoCrawler.getTitle());
             videoCrawler.setMsisdn(video.getMsisdn());
             videoCrawler.setCategoryId(video.getCategoryId());
+
+            Video_crawler_item videoItem=new Video_crawler_item();
+            videoItem.setUrl(video.getUrl());
+            videoItem.setTitle(videoCrawler.getTitle());
+            videoItem.setVideoInfo(video);
+            videoItemDao.saveVideoItem(videoItem);
+
             int result = callAPIUpload(videoCrawler);
             if (result == 0) {
                 return 0;
