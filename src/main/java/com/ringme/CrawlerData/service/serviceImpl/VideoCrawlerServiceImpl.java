@@ -145,7 +145,6 @@ public class VideoCrawlerServiceImpl {
             ObjectMapper objectMapper = new ObjectMapper();
             for (String line : lines) {
                 JsonNode jsonNode = objectMapper.readTree(line);
-                logger.info("jsonNode = " + jsonNode);
                 String id = jsonNode.get("id").asText();
                 idVideo.add(id);
             }
@@ -162,6 +161,8 @@ public class VideoCrawlerServiceImpl {
                 commands.add("--sleep-interval");
                 commands.add("300");
                 commands.add(url);
+                commands.add("-f");
+                commands.add("mp4");
                 logger.info("Link|Download : " + commands.toString());
 
                 ProcessBuilder builder = new ProcessBuilder(commands);
@@ -174,7 +175,6 @@ public class VideoCrawlerServiceImpl {
                 while ((l = reader1.readLine()) != null) {
                     line1s.add(l);
                 }
-                logger.info("Lines : "+ line1s);
                 proc1.waitFor();
                 reader1.close();
                 String mediaPath = ""; //Find String contains [download] Destination: /home/anhquan/Video/
@@ -187,6 +187,7 @@ public class VideoCrawlerServiceImpl {
                 Video_crawler_info videoCrawler = new Video_crawler_info();
                 int count1 = mediaPath.indexOf(":");
                 videoCrawler.setMedia_path(mediaPath.substring(count1 + 1).trim());
+                logger.info("File|MediaPath| : " + videoCrawler.getMedia_path());
                 int count2 = mediaPath.lastIndexOf("/");
                 logger.info("count 2 : " + count2);
                 videoCrawler.setTitle(Validation.validateFileName(mediaPath.substring(count2 + 1).trim()));
@@ -222,6 +223,8 @@ public class VideoCrawlerServiceImpl {
         commands.add("--sleep-interval");
         commands.add("300");
         commands.add(video.getUrl());
+        commands.add("-f");
+        commands.add("mp4");
         logger.info("Link|Download : " + commands.toString());
         ProcessBuilder builder = new ProcessBuilder(commands);
         builder.redirectErrorStream(true);
@@ -287,7 +290,6 @@ public class VideoCrawlerServiceImpl {
             headers.set("mocha-api", "");
             headers.set("Accept-language", "vi");
             HttpEntity<MultiValueMap<String, Object>> request = new HttpEntity<>(map, headers);
-            //Object obj = rest.postForEntity("http://kakoakdev.ringme.vn/video-service/v1/media/video/upload", request, Object.class);
             Object obj = rest.postForEntity("http://freeapi.kakoak.tls.tl/video-service/v1/media/video/upload", request, Object.class);
 
             //find mediaPath of video after save on server
