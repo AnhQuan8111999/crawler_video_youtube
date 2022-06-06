@@ -18,14 +18,14 @@ public class VideoCrawlerDaoImpl implements VideoCrawlerDao {
 
     @Override
     public Video_crawler_info updateVideoCrawlerInfo(Video_crawler_info video) {
-        String sql ="UPDATE video_crawler_info SET status=? WHERE id=?";
-        jdbcTemplate.update(sql, video.getStatus(), video.getId());
+        String sql ="UPDATE video_crawler_info SET active=? WHERE id=?";
+        jdbcTemplate.update(sql, 1 , video.getId());
         return video;
     }
 
     @Override
     public List<Video_crawler_info> getVideoNotCrawler() {
-        String sql="SELECT * FROM video_crawler_info WHERE status=0";
+        String sql="SELECT * FROM video_crawler_info WHERE active=0";
         List<Video_crawler_info> videos=jdbcTemplate.query(sql, new RowMapper<Video_crawler_info>() {
             @Override
             public Video_crawler_info mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -33,8 +33,7 @@ public class VideoCrawlerDaoImpl implements VideoCrawlerDao {
                 video.setId(rs.getInt("id"));
                 video.setType(rs.getString("type"));
                 video.setUrl(rs.getString("url"));
-                video.setTitle(rs.getString("title"));
-                video.setStatus(rs.getInt("status"));
+                video.setActive(rs.getInt("active"));
                 video.setMsisdn(rs.getString("msisdn"));
                 video.setCategoryId(rs.getInt("categoryId"));
                 return video;

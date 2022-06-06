@@ -17,15 +17,27 @@ public class VideoItemDaoImpl implements VideoItemDao {
     private static Logger logger = Logger.getLogger(VideoItemDaoImpl.class);
 
     @Override
-    public Video_crawler_item saveVideoItem(Video_crawler_item video_crawler_item) {
+    public Video_crawler_item saveVideoItem(Video_crawler_item videoItem) {
         try {
-            String sql = "INSERT INTO video_crawler_item (url,title,download_time,video_crawler_info_id) VALUE (?,?,?,?)";
-            jdbcTemplate.update(sql, video_crawler_item.getUrl(), video_crawler_item.getTitle(),
-                    video_crawler_item.getDownload_time(), video_crawler_item.getVideoInfo().getId());
-            return video_crawler_item;
+            String sql = "INSERT INTO video_crawler_item (url,video_crawler_info_id,status) VALUE (?,?,?)";
+            jdbcTemplate.update(sql, videoItem.getUrl(),videoItem.getVideoInfo().getId(),0);
+            return videoItem;
         }catch (Exception e){
             logger.info("Save|InfoVideo|Exception : "+e.getMessage() ,e);
             return null;
         }
+    }
+
+    @Override
+    public int updateVideoItem(Video_crawler_item videoItem) {
+        try{
+            String sql ="UPDATE video_crawler_info SET title=?, status=? WHERE id=?";
+            jdbcTemplate.update(sql,videoItem.getTitle(), videoItem.getStatus() , videoItem.getId());
+            return 1;
+        }catch(Exception e){
+            logger.info("UpdateVideoItem|Exception : "+ e.getMessage(),e);
+            return 0;
+        }
+
     }
 }

@@ -22,6 +22,10 @@ public class Video_crawler_item {
 
     private Video_crawler_info videoInfo;
 
+    private int status;
+
+    private String media_path;
+
     private String formatDate(){
         LocalDateTime localTime = LocalDateTime.now();
         DateTimeFormatter FormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
