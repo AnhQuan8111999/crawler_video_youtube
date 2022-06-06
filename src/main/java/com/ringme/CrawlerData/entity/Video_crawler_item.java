@@ -18,18 +18,18 @@ public class Video_crawler_item {
 
     private String title;
 
-    private String download_time =formatDate();
+    private String download_time ;
 
     private Video_crawler_info videoInfo;
 
-    private int status;
+    private int status; // 0 - chua download,1- dang download , 2- download va upload xong, 3- upload khong thanh cong
 
     private String media_path;
 
-    private String formatDate(){
-        LocalDateTime localTime = LocalDateTime.now();
-        DateTimeFormatter FormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String time = localTime.format(FormatObj);
-        return time;
-    }
+//    private String formatDate(){
+//        LocalDateTime localTime = LocalDateTime.now();
+//        DateTimeFormatter FormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+//        String time = localTime.format(FormatObj);
+//        return time;
+//    }
 }

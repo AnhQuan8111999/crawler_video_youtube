@@ -21,39 +21,3 @@ public class Test {
         }
     }
 }
-
-//videoCrawlerInfo.setStatus(1); // status downloading
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-//        Video_crawler_info v = crawlerVideoFacebook(videoCrawlerInfo);
-//        if (v != null) {
-//        videoCrawlerInfo.setStatus(2);// status downloaded
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-//        } else {
-//        videoCrawlerInfo.setStatus(3); // status false download
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-//        }
-//
-//        videoCrawlerInfo.setStatus(1);
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-//        int v = crawlerSingleVideoYoutube(videoCrawlerInfo);
-//        if (v == 1) {
-//        videoCrawlerInfo.setStatus(2);
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-//        } else {
-//        videoCrawlerInfo.setStatus(3);
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-//        }
-//
-//        videoCrawlerInfo.setStatus(1);
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-//        int v = crawlerListVideoYoutube(videoCrawlerInfo);
-//        if (v == 1) {
-//        videoCrawlerInfo.setStatus(2);
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-//        } else {
-//        videoCrawlerInfo.setStatus(3);
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);
-//        }
-//
-//        videoCrawlerInfo.setStatus(3);
-//        videoCrawlerDao.updateVideoCrawlerInfo(videoCrawlerInfo);

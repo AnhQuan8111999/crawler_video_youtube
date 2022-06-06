@@ -19,6 +19,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -38,7 +40,7 @@ public class VideoCrawlerServiceImpl {
 
     private BlockingQueue<Video_crawler_item> queue = new ArrayBlockingQueue<>(10000);
 
-    @Scheduled(fixedDelay = 86400, initialDelay = 1000) // after run 1s - method is called - repeat method 24h
+    @Scheduled(fixedDelay = 86400000, initialDelay = 1000) // after run 1s - method is called - repeat method 24h
     public void getVideoCrawler() {
         List<Video_crawler_info> video_crawler_infos = videoCrawlerDao.getVideoNotCrawler();
         for (Video_crawler_info videoInfo : video_crawler_infos) {
@@ -47,8 +49,8 @@ public class VideoCrawlerServiceImpl {
                 Video_crawler_item videoItem = new Video_crawler_item();
                 videoItem.setUrl(videoInfo.getUrl());
                 videoItem.setVideoInfo(videoInfo);
+                videoItem.setVideoInfo(videoInfo);
                 videoItemDao.saveVideoItem(videoItem);
-                queue.offer(videoItem);
 
                 videoInfo.setActive(1);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
@@ -57,7 +59,6 @@ public class VideoCrawlerServiceImpl {
                 videoItem.setUrl(videoInfo.getUrl());
                 videoItem.setVideoInfo(videoInfo);
                 videoItemDao.saveVideoItem(videoItem);
-                queue.offer(videoItem);
 
                 videoInfo.setActive(1);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
@@ -69,7 +70,6 @@ public class VideoCrawlerServiceImpl {
                     videoItem.setUrl(url);
                     videoItem.setVideoInfo(videoInfo);
                     videoItemDao.saveVideoItem(videoItem);
-                    queue.offer(videoItem);
                 }
                 videoInfo.setActive(1);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
@@ -78,6 +78,9 @@ public class VideoCrawlerServiceImpl {
                 videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
             }
         }
+        List<Video_crawler_item> videoItems=new ArrayList<>();
+        videoItems=videoItemDao.getVideoItems();
+        queue.addAll(videoItems);
     }
 
     private List<String> getIdVideoChannelYoutube(Video_crawler_info videoInfo) {
@@ -108,67 +111,72 @@ public class VideoCrawlerServiceImpl {
         }
     }
 
-    @Scheduled(fixedDelay = 86400, initialDelay = 1000)
+    @Scheduled(fixedDelay = 43200000, initialDelay = 10000) // method is called after 12h
     private void crawlerAndUploadVideo() {
-        while((Video_crawler_item videoItem=queue.poll()) != null){
-        List<String> commands = new ArrayList<String>();
-        commands.add("youtube-dl");
-        commands.add("-o");
-        commands.add("~/VideoCrawler/%(title)s.%(ext)s");
-        commands.add("--sleep-interval");
-        commands.add("3");
-        commands.add(videoItem.getUrl());
-        commands.add("-f");
-        commands.add("mp4");
-        logger.info("Link|Download : " + commands.toString());
-        ProcessBuilder builder = new ProcessBuilder(commands);
-        builder.redirectErrorStream(true);
+//        logger.info("Queue : "+ queue.toString());
+        logger.info("Queue.size  : "+ queue.size());
+        Video_crawler_item videoItem=new Video_crawler_item();
+        while(( videoItem=queue.poll()) != null) {
+            videoItem.setStatus(1);
+            videoItemDao.updateVideoItem(videoItem);
 
-        try {
-            Process proc = builder.start();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-            List<String> lines = new ArrayList<>();
-            String l;
-            while ((l = reader.readLine()) != null) {
-                lines.add(l);
-            }
-            proc.waitFor();
-            reader.close();
+            List<String> commands = new ArrayList<String>();
+            commands.add("youtube-dl");
+            commands.add("-o");
+            commands.add("~/VideoCrawler/%(title)s.%(ext)s");
+            commands.add("--sleep-interval");
+            commands.add("300");
+            commands.add(videoItem.getUrl());
+            commands.add("-f");
+            commands.add("mp4");
+            logger.info("Link|Download : " + commands.toString());
+            ProcessBuilder builder = new ProcessBuilder(commands);
+            builder.redirectErrorStream(true);
 
-            String mediaPath = ""; //Find String contains [download] Destination: /home/anhquan/Video/
-            for (String path : lines) {
-                if (path.contains("Destination: ")) {
-                    mediaPath = path;
+            try {
+                Process proc = builder.start();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+                List<String> lines = new ArrayList<>();
+                String l;
+                while ((l = reader.readLine()) != null) {
+                    lines.add(l);
                 }
-            }
-            logger.info("MediaPath|DATA : " + mediaPath);
-            Video_crawler_info videoCrawler = new Video_crawler_info();
-            int count1 = mediaPath.indexOf(":");
-            videoCrawler.setMedia_path(mediaPath.substring(count1 + 1).trim());
-            logger.info("video|path : " + videoCrawler.getMedia_path());
-            int count2 = mediaPath.lastIndexOf("/");
-            videoCrawler.setTitle(Validation.validateFileName(mediaPath.substring(count2 + 1).trim()));
-            logger.info("video title : " + videoCrawler.getTitle());
-            videoCrawler.setMsisdn(videoItem.getVideoInfo().getMsisdn());
-            videoCrawler.setCategoryId(videoItem.getVideoInfo().getCategoryId());
+                proc.waitFor();
+                reader.close();
 
-//            Video_crawler_item videoItem = new Video_crawler_item();
-//            videoItem.setUrl(videoItem.getUrl());
-//            videoItem.setTitle(videoCrawler.getTitle());
-//            videoItem.setVideoInfo(videoItem);
-//            videoItemDao.saveVideoItem(videoItem);
+                String mediaPath = ""; //Find String contains [download] Destination: /home/anhquan/Video/
+                for (String path : lines) {
+                    if (path.contains("Destination: ")) {
+                        mediaPath = path;
+                    }
+                }
+                logger.info("MediaPath|DATA : " + mediaPath);
+                int count1 = mediaPath.indexOf(":");
+                videoItem.setMedia_path(mediaPath.substring(count1 + 1).trim());
+                logger.info("video|path : " + videoItem.getMedia_path());
+                int count2 = mediaPath.lastIndexOf("/");
+                videoItem.setTitle(Validation.validateFileName(mediaPath.substring(count2 + 1).trim()));
+                logger.info("video title : " + videoItem.getTitle());
 
-            int result = callAPIUpload(videoCrawler);
-            if (result == 0) {
+                callAPIUpload(videoItem);
+
+                LocalDateTime localTime = LocalDateTime.now();
+                DateTimeFormatter FormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                String time = localTime.format(FormatObj);
+                videoItem.setDownload_time(time);
+                videoItem.setStatus(2);
+                videoItemDao.updateVideoItem(videoItem);
+            } catch (Exception e) {
+                logger.info("Download|Exception : " + e.getMessage(), e);
+                videoItem.setStatus(3);
+                videoItemDao.updateVideoItem(videoItem);
+                continue;
             }
-        } catch (Exception e) {
-            logger.error("Download|Exception : " + e.getMessage(), e);
         }
     }
 
-    private int callAPIUpload(Video_crawler_item videoItem) {
-        //call API uploadvide at videovcs
-        try {
+    private int callAPIUpload(Video_crawler_item videoItem) throws Exception{
+            //call API uploadvide at videovcs
             RestTemplate rest = new RestTemplate();
             MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
             map.add("msisdn", videoItem.getVideoInfo().getMsisdn());//request parameters
@@ -219,50 +227,6 @@ public class VideoCrawlerServiceImpl {
             } else {
                 System.out.println("Video not exist");
             }
-        } catch (Exception e) {
-            logger.info("APIUpload|EXCEPTION : " + e.getMessage(), e);
-            return 0;
-        }
         return 1;
     }
 }
-
-
-//    private Video_crawler_info crawlerVideoFacebook(Video_crawler_info video) {
-//        logger.info("Link : " + video.getUrl());
-//        String commandTemplate = "youtube-dl -o ~/VideoCrawler/%(title)s.%(ext)s --sleep-interval 300 %SOURCE_PATH% -f mp4"; //--sleep-interval 360
-//        String command = commandTemplate.replace("%SOURCE_PATH%", video.getUrl());
-//        logger.info("comman : " + command);
-//        try {
-//            Process proc = Runtime.getRuntime().exec(command);
-//            proc.waitFor();
-//            System.out.println("Comment : " + command);  // Read the output
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-//            List<String> lines = new ArrayList<>();
-//            String s;
-//            while ((s = reader.readLine()) != null) {
-//                lines.add(s);
-//            }
-//            String mediaPath = ""; //Find String contains [download] Destination: /home/anhquan/Video/
-//            for (String path : lines) {
-//                if (path.contains("Destination: ")) {
-//                    mediaPath = path;
-//                }
-//            }
-//            int count1 = mediaPath.indexOf(":"); //set media_path for video
-//            video.setMedia_path(mediaPath.substring(count1 + 1).trim());
-//            video.setTitle(video.getTitle() + ".mp4");
-//
-//            Video_crawler_item videoItem = new Video_crawler_item();
-//            videoItem.setUrl(video.getUrl());
-//            videoItem.setTitle(video.getTitle());
-//            videoItem.setVideoInfo(video);
-//            videoItemDao.saveVideoItem(videoItem);
-//
-//            callAPIUpload(video);
-//        } catch (Exception e) {
-//            logger.info("Download|Exception| " + e.getMessage(), e);
-//            return null;
-//        }
-//        return video;
-//    }

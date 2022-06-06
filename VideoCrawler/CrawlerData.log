@@ -1365,3 +1365,688 @@ org.springframework.web.client.UnknownContentTypeException: Could not extract re
 2022-06-03 16:35:47 INFO  VideoCrawlerServiceImpl:312 - DATA:{msisdn=[0349006629], timestamp=[1654248947625], security=[], categoryId=[1121], videoTitle=[Top New Leatest Funny Video Clip 2019 _ Episode 16 _ #BusyFunLtd.mp4], clientType=[clientType], revision=[revision], videoDesc=[Top New Leatest Funny Video Clip 2019 _ Episode 16 _ #BusyFunLtd.mp4], imageUrl=[/cms_upload/img/2020/12/09/unnamed-1607496877.jpg], videoUrl=[/usr_upload/158/video/20220603/f96006aaa8b7f77cc8c0b37c5414a80e.mp4]}
 2022-06-03 16:35:49 INFO  VideoCrawlerServiceImpl:319 - Obj = <200,{code=200, desc=Success, mediaPath=/usr_upload/158/video/20220603/f96006aaa8b7f77cc8c0b37c5414a80e.mp4, mediaUrl=http://videoapi.kakoak.tls.tl/usr_upload/158/video/20220603/f96006aaa8b7f77cc8c0b37c5414a80e.mp4},[Server:"nginx", Date:"Fri, 03 Jun 2022 09:35:47 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
 2022-06-03 16:35:49 INFO  VideoCrawlerServiceImpl:320 - Obj1 = <200,{data={id=398650, cateId=1121, channelId=48172, videoTitle=Top New Leatest Funny Video Clip 2019 _ Episode 16 _ #BusyFunLtd.mp4, videoDesc=Top New Leatest Funny Video Clip 2019 _ Episode 16 _ #BusyFunLtd.mp4, videoMedia=/usr_upload/158/video/20220603/f96006aaa8b7f77cc8c0b37c5414a80e.mp4, videoImage=, imageThumb=null, imageSmall=null, videoTime=null, publishTime=null, totalViews=1, totalLikes=0, totalShares=0, totalComments=0, resolution=1, aspecRatio=1.778, isAdaptive=0, isLike=0, status=1, cate=null, channel={id=48172, channelName=Hiếu Hài, channelAvatar=/usr_upload/158/image/20220328/81c40e0eb661ed9687d3b7157152fac1.jpg, headerBanner=null, description=null, numFollows=271, numVideos=null, isOfficial=null, createdFrom=null, isFollow=null, isOwner=null, url=null, state=null}, url=null, hashId=null, list_resolution=null}, code=200, desc=Success},[Server:"nginx", Date:"Fri, 03 Jun 2022 09:35:48 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
+2022-06-06 11:45:55 INFO  VideoCrawlerServiceImpl:105 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 11:46:01 INFO  VideoCrawlerServiceImpl:115 - Queue : [Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=U-xjYyIOPAs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=1O0yazhqaxs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null)]
+2022-06-06 11:46:01 INFO  VideoCrawlerServiceImpl:127 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=U-xjYyIOPAs, -f, mp4]
+2022-06-06 11:46:19 INFO  VideoCrawlerServiceImpl:148 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 11:46:19 INFO  VideoCrawlerServiceImpl:151 - video|path : /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 11:46:19 INFO  VideoCrawlerServiceImpl:154 - video title : 3 Second Countdown Video #shorts.mp4
+2022-06-06 11:46:20 INFO  VideoItemDaoImpl:38 - UpdateVideoItem|Exception : PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_info SET title=?, status=? WHERE id=?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_info SET title=?, status=? WHERE id=?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:35)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$b4d4bf56.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:160)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 11:46:20 INFO  VideoCrawlerServiceImpl:127 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=1O0yazhqaxs, -f, mp4]
+2022-06-06 11:46:27 INFO  VideoCrawlerServiceImpl:148 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 11:46:27 INFO  VideoCrawlerServiceImpl:151 - video|path : /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 11:46:27 INFO  VideoCrawlerServiceImpl:154 - video title : 3 Second Video.mp4
+2022-06-06 11:46:27 INFO  VideoItemDaoImpl:38 - UpdateVideoItem|Exception : PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_info SET title=?, status=? WHERE id=?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_info SET title=?, status=? WHERE id=?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:35)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$b4d4bf56.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:160)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 11:47:53 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 11:49:20 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 11:50:22 INFO  VideoCrawlerServiceImpl:105 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 11:50:29 INFO  VideoCrawlerServiceImpl:115 - Queue : [Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=U-xjYyIOPAs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=1O0yazhqaxs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null)]
+2022-06-06 11:50:29 INFO  VideoCrawlerServiceImpl:127 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=U-xjYyIOPAs, -f, mp4]
+2022-06-06 11:50:46 INFO  VideoCrawlerServiceImpl:148 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 11:50:46 INFO  VideoCrawlerServiceImpl:151 - video|path : /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 11:50:46 INFO  VideoCrawlerServiceImpl:154 - video title : 3 Second Countdown Video #shorts.mp4
+2022-06-06 11:50:47 INFO  VideoItemDaoImpl:38 - UpdateVideoItem|Exception : PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_info SET title=?,download_time=?, status=? WHERE id=?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_info SET title=?,download_time=?, status=? WHERE id=?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:35)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$aa5751ff.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:161)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 11:50:47 INFO  VideoCrawlerServiceImpl:127 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=1O0yazhqaxs, -f, mp4]
+2022-06-06 11:50:53 INFO  VideoCrawlerServiceImpl:148 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 11:50:53 INFO  VideoCrawlerServiceImpl:151 - video|path : /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 11:50:53 INFO  VideoCrawlerServiceImpl:154 - video title : 3 Second Video.mp4
+2022-06-06 11:50:53 INFO  VideoItemDaoImpl:38 - UpdateVideoItem|Exception : PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_info SET title=?,download_time=?, status=? WHERE id=?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_info SET title=?,download_time=?, status=? WHERE id=?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:35)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$aa5751ff.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:161)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'title' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 11:52:19 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 11:53:46 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 11:55:12 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 11:56:39 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 11:58:05 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 11:59:31 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:00:58 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:02:24 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:03:51 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:05:17 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:06:43 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:08:10 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:09:36 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:11:03 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:12:29 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:13:55 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:15:22 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:16:48 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:18:15 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:19:41 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:21:07 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:22:34 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:24:00 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:25:27 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:26:53 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:28:19 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:29:46 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:31:12 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:32:39 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:34:05 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 12:35:31 INFO  VideoCrawlerServiceImpl:115 - Queue : []
+2022-06-06 13:38:19 INFO  VideoCrawlerServiceImpl:105 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 13:38:26 INFO  VideoCrawlerServiceImpl:115 - Queue : [Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=U-xjYyIOPAs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=1O0yazhqaxs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null)]
+2022-06-06 13:38:26 INFO  VideoCrawlerServiceImpl:127 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=U-xjYyIOPAs, -f, mp4]
+2022-06-06 13:38:28 INFO  VideoCrawlerServiceImpl:148 - MediaPath|DATA : 
+2022-06-06 13:38:28 INFO  VideoCrawlerServiceImpl:151 - video|path : 
+2022-06-06 13:38:28 INFO  VideoCrawlerServiceImpl:154 - video title : 
+2022-06-06 13:38:28 INFO  VideoCrawlerServiceImpl:127 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=1O0yazhqaxs, -f, mp4]
+2022-06-06 13:38:31 INFO  VideoCrawlerServiceImpl:148 - MediaPath|DATA : 
+2022-06-06 13:38:31 INFO  VideoCrawlerServiceImpl:151 - video|path : 
+2022-06-06 13:38:31 INFO  VideoCrawlerServiceImpl:154 - video title : 
+2022-06-06 13:42:37 INFO  VideoCrawlerServiceImpl:105 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 13:42:43 INFO  VideoCrawlerServiceImpl:115 - Queue : [Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=U-xjYyIOPAs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=1O0yazhqaxs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null)]
+2022-06-06 13:42:43 INFO  VideoCrawlerServiceImpl:127 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=U-xjYyIOPAs, -f, mp4]
+2022-06-06 13:43:01 INFO  VideoCrawlerServiceImpl:148 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 13:43:01 INFO  VideoCrawlerServiceImpl:151 - video|path : /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 13:43:01 INFO  VideoCrawlerServiceImpl:154 - video title : 3 Second Countdown Video #shorts.mp4
+2022-06-06 13:43:02 INFO  VideoCrawlerServiceImpl:127 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=1O0yazhqaxs, -f, mp4]
+2022-06-06 13:43:08 INFO  VideoCrawlerServiceImpl:148 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 13:43:08 INFO  VideoCrawlerServiceImpl:151 - video|path : /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 13:43:08 INFO  VideoCrawlerServiceImpl:154 - video title : 3 Second Video.mp4
+2022-06-06 13:56:36 INFO  VideoCrawlerServiceImpl:106 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 13:56:42 INFO  VideoCrawlerServiceImpl:116 - Queue : [Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=U-xjYyIOPAs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=1O0yazhqaxs, title=null, download_time=null, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=0, media_path=null)]
+2022-06-06 13:56:42 INFO  VideoCrawlerServiceImpl:128 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=U-xjYyIOPAs, -f, mp4]
+2022-06-06 13:57:00 INFO  VideoCrawlerServiceImpl:149 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 13:57:00 INFO  VideoCrawlerServiceImpl:152 - video|path : /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 13:57:00 INFO  VideoCrawlerServiceImpl:155 - video title : 3 Second Countdown Video #shorts.mp4
+2022-06-06 13:57:00 INFO  VideoCrawlerServiceImpl:182 - DATA:{msisdn=[0349006629], mpw=[9EBB7AE993E7FCDFA600E108CC21A259], fName=[3 Second Countdown Video #shorts.mp4], uFile=[file [/home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4]], timestamp=[1654498620871], security=[]}
+2022-06-06 13:57:01 INFO  VideoCrawlerServiceImpl:206 - DATA:{msisdn=[0349006629], timestamp=[1654498621782], security=[], categoryId=[1121], videoTitle=[3 Second Countdown Video #shorts.mp4], clientType=[clientType], revision=[revision], videoDesc=[3 Second Countdown Video #shorts.mp4], imageUrl=[/cms_upload/img/2020/12/09/unnamed-1607496877.jpg], videoUrl=[/usr_upload/159/video/20220606/61c87ee3872e96bc4551e9b8a9e5117a.mp4]}
+2022-06-06 13:57:03 INFO  VideoCrawlerServiceImpl:213 - Obj = <200,{code=200, desc=Success, mediaPath=/usr_upload/159/video/20220606/61c87ee3872e96bc4551e9b8a9e5117a.mp4, mediaUrl=http://videocdn.kakoak.tls.tl/usr_upload/159/video/20220606/61c87ee3872e96bc4551e9b8a9e5117a.mp4},[Server:"nginx", Date:"Mon, 06 Jun 2022 06:57:01 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
+2022-06-06 13:57:03 INFO  VideoCrawlerServiceImpl:214 - Obj1 = <200,{data={id=401566, cateId=1121, channelId=48172, videoTitle=3 Second Countdown Video #shorts.mp4, videoDesc=3 Second Countdown Video #shorts.mp4, videoMedia=/usr_upload/159/video/20220606/61c87ee3872e96bc4551e9b8a9e5117a.mp4, videoImage=, imageThumb=null, imageSmall=null, videoTime=null, publishTime=null, totalViews=1, totalLikes=0, totalShares=0, totalComments=0, resolution=1, aspecRatio=1.778, isAdaptive=0, isLike=0, status=1, cate=null, channel={id=48172, channelName=Hiếu Hài, channelAvatar=/usr_upload/158/image/20220328/81c40e0eb661ed9687d3b7157152fac1.jpg, headerBanner=null, description=null, numFollows=585, numVideos=null, isOfficial=null, createdFrom=null, isFollow=null, isOwner=null, url=null, state=null}, url=null, hashId=null, list_resolution=null}, code=200, desc=Success},[Server:"nginx", Date:"Mon, 06 Jun 2022 06:57:03 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
+2022-06-06 13:57:03 INFO  VideoCrawlerServiceImpl:128 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=1O0yazhqaxs, -f, mp4]
+2022-06-06 13:57:09 INFO  VideoCrawlerServiceImpl:149 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 13:57:09 INFO  VideoCrawlerServiceImpl:152 - video|path : /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 13:57:09 INFO  VideoCrawlerServiceImpl:155 - video title : 3 Second Video.mp4
+2022-06-06 13:57:09 INFO  VideoCrawlerServiceImpl:182 - DATA:{msisdn=[0349006629], mpw=[9EBB7AE993E7FCDFA600E108CC21A259], fName=[3 Second Video.mp4], uFile=[file [/home/anhquan/VideoCrawler/3 Second Video.mp4]], timestamp=[1654498629975], security=[]}
+2022-06-06 13:57:10 INFO  VideoCrawlerServiceImpl:206 - DATA:{msisdn=[0349006629], timestamp=[1654498630388], security=[], categoryId=[1121], videoTitle=[3 Second Video.mp4], clientType=[clientType], revision=[revision], videoDesc=[3 Second Video.mp4], imageUrl=[/cms_upload/img/2020/12/09/unnamed-1607496877.jpg], videoUrl=[/usr_upload/159/video/20220606/46c6832023dafcb1c053b8898c83db56.mp4]}
+2022-06-06 13:57:12 INFO  VideoCrawlerServiceImpl:213 - Obj = <200,{code=200, desc=Success, mediaPath=/usr_upload/159/video/20220606/46c6832023dafcb1c053b8898c83db56.mp4, mediaUrl=http://videocdn.kakoak.tls.tl/usr_upload/159/video/20220606/46c6832023dafcb1c053b8898c83db56.mp4},[Server:"nginx", Date:"Mon, 06 Jun 2022 06:57:10 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
+2022-06-06 13:57:12 INFO  VideoCrawlerServiceImpl:214 - Obj1 = <200,{data={id=401569, cateId=1121, channelId=48172, videoTitle=3 Second Video.mp4, videoDesc=3 Second Video.mp4, videoMedia=/usr_upload/159/video/20220606/46c6832023dafcb1c053b8898c83db56.mp4, videoImage=, imageThumb=null, imageSmall=null, videoTime=null, publishTime=null, totalViews=1, totalLikes=0, totalShares=0, totalComments=0, resolution=1, aspecRatio=1.778, isAdaptive=0, isLike=0, status=1, cate=null, channel={id=48172, channelName=Hiếu Hài, channelAvatar=/usr_upload/158/image/20220328/81c40e0eb661ed9687d3b7157152fac1.jpg, headerBanner=null, description=null, numFollows=585, numVideos=null, isOfficial=null, createdFrom=null, isFollow=null, isOwner=null, url=null, state=null}, url=null, hashId=null, list_resolution=null}, code=200, desc=Success},[Server:"nginx", Date:"Mon, 06 Jun 2022 06:57:11 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
+2022-06-06 14:04:34 INFO  VideoCrawlerServiceImpl:106 - IdVide|SIZE : 4 - IdVideo|Data : [j4Wa-HYdZg0, Vps3kfLpoxQ, z3YUrId57IA, 9odyYUS1xx4]
+2022-06-06 14:04:38 INFO  VideoCrawlerServiceImpl:106 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 14:04:40 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 7
+2022-06-06 14:04:40 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=j4Wa-HYdZg0, -f, mp4]
+2022-06-06 14:14:35 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/Watch New Funny Comedy Videos 2019.mp4
+2022-06-06 14:14:35 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/Watch New Funny Comedy Videos 2019.mp4
+2022-06-06 14:14:35 INFO  VideoCrawlerServiceImpl:156 - video title : Watch New Funny Comedy Videos 2019.mp4
+2022-06-06 14:14:35 INFO  VideoCrawlerServiceImpl:183 - DATA:{msisdn=[0349006629], mpw=[9EBB7AE993E7FCDFA600E108CC21A259], fName=[Watch New Funny Comedy Videos 2019.mp4], uFile=[file [/home/anhquan/VideoCrawler/Watch New Funny Comedy Videos 2019.mp4]], timestamp=[1654499675878], security=[]}
+2022-06-06 14:14:42 INFO  VideoCrawlerServiceImpl:207 - DATA:{msisdn=[0349006629], timestamp=[1654499682594], security=[], categoryId=[1121], videoTitle=[Watch New Funny Comedy Videos 2019.mp4], clientType=[clientType], revision=[revision], videoDesc=[Watch New Funny Comedy Videos 2019.mp4], imageUrl=[/cms_upload/img/2020/12/09/unnamed-1607496877.jpg], videoUrl=[/usr_upload/159/video/20220606/87107a4b7a145f42be6c1b43f8147747.mp4]}
+2022-06-06 14:14:43 INFO  VideoCrawlerServiceImpl:214 - Obj = <200,{code=200, desc=Success, mediaPath=/usr_upload/159/video/20220606/87107a4b7a145f42be6c1b43f8147747.mp4, mediaUrl=http://videocdn.kakoak.tls.tl/usr_upload/159/video/20220606/87107a4b7a145f42be6c1b43f8147747.mp4},[Server:"nginx", Date:"Mon, 06 Jun 2022 07:14:42 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
+2022-06-06 14:14:43 INFO  VideoCrawlerServiceImpl:215 - Obj1 = <200,{data={id=401587, cateId=1121, channelId=48172, videoTitle=Watch New Funny Comedy Videos 2019.mp4, videoDesc=Watch New Funny Comedy Videos 2019.mp4, videoMedia=/usr_upload/159/video/20220606/87107a4b7a145f42be6c1b43f8147747.mp4, videoImage=, imageThumb=null, imageSmall=null, videoTime=null, publishTime=null, totalViews=1, totalLikes=0, totalShares=0, totalComments=0, resolution=1, aspecRatio=1.778, isAdaptive=0, isLike=0, status=1, cate=null, channel={id=48172, channelName=Hiếu Hài, channelAvatar=/usr_upload/158/image/20220328/81c40e0eb661ed9687d3b7157152fac1.jpg, headerBanner=null, description=null, numFollows=587, numVideos=null, isOfficial=null, createdFrom=null, isFollow=null, isOwner=null, url=null, state=null}, url=null, hashId=null, list_resolution=null}, code=200, desc=Success},[Server:"nginx", Date:"Mon, 06 Jun 2022 07:14:44 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
+2022-06-06 14:14:44 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=Vps3kfLpoxQ, -f, mp4]
+2022-06-06 14:27:19 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 1
+2022-06-06 14:27:19 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=THtYnK2-TQ4, -f, mp4]
+2022-06-06 14:27:36 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4
+2022-06-06 14:27:36 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4
+2022-06-06 14:27:36 INFO  VideoCrawlerServiceImpl:156 - video title : Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4
+2022-06-06 14:27:36 INFO  VideoCrawlerServiceImpl:183 - DATA:{msisdn=[0349006629], mpw=[9EBB7AE993E7FCDFA600E108CC21A259], fName=[Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4], uFile=[file [/home/anhquan/VideoCrawler/Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4]], timestamp=[1654500456751], security=[]}
+2022-06-06 14:27:37 INFO  VideoCrawlerServiceImpl:207 - DATA:{msisdn=[0349006629], timestamp=[1654500457525], security=[], categoryId=[1121], videoTitle=[Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4], clientType=[clientType], revision=[revision], videoDesc=[Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4], imageUrl=[/cms_upload/img/2020/12/09/unnamed-1607496877.jpg], videoUrl=[/usr_upload/159/video/20220606/7c51fb0153beda8cf9d8a5c5bd805ff7.mp4]}
+2022-06-06 14:28:30 INFO  VideoCrawlerServiceImpl:214 - Obj = <200,{code=200, desc=Success, mediaPath=/usr_upload/159/video/20220606/7c51fb0153beda8cf9d8a5c5bd805ff7.mp4, mediaUrl=http://videocdn.kakoak.tls.tl/usr_upload/159/video/20220606/7c51fb0153beda8cf9d8a5c5bd805ff7.mp4},[Server:"nginx", Date:"Mon, 06 Jun 2022 07:27:37 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
+2022-06-06 14:28:30 INFO  VideoCrawlerServiceImpl:215 - Obj1 = <200,{data={id=401593, cateId=1121, channelId=48172, videoTitle=Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4, videoDesc=Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4, videoMedia=/usr_upload/159/video/20220606/7c51fb0153beda8cf9d8a5c5bd805ff7.mp4, videoImage=, imageThumb=null, imageSmall=null, videoTime=null, publishTime=null, totalViews=1, totalLikes=0, totalShares=0, totalComments=0, resolution=1, aspecRatio=1.778, isAdaptive=0, isLike=0, status=1, cate=null, channel={id=48172, channelName=Hiếu Hài, channelAvatar=/usr_upload/158/image/20220328/81c40e0eb661ed9687d3b7157152fac1.jpg, headerBanner=null, description=null, numFollows=587, numVideos=null, isOfficial=null, createdFrom=null, isFollow=null, isOwner=null, url=null, state=null}, url=null, hashId=null, list_resolution=null}, code=200, desc=Success},[Server:"nginx", Date:"Mon, 06 Jun 2022 07:28:30 GMT", Content-Type:"application/json", Transfer-Encoding:"chunked", Connection:"keep-alive", Vary:"Accept-Encoding", X-Frame-Options:"SAMEORIGIN", Allow:"GET, POST, HEAD"]>
+2022-06-06 14:28:30 INFO  VideoItemDaoImpl:38 - UpdateVideoItem|Exception : PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1
+org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1542)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:35)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$a2b375b5.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:165)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLException: Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 14:34:03 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 1
+2022-06-06 14:34:03 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=THtYnK2-TQ4, -f, mp4]
+2022-06-06 14:34:21 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4
+2022-06-06 14:34:21 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4
+2022-06-06 14:34:21 INFO  VideoCrawlerServiceImpl:156 - video title : Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4
+2022-06-06 14:34:21 INFO  VideoCrawlerServiceImpl:165 - VideoItem : Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=THtYnK2-TQ4, title=Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4, download_time=06-06-2022 14:34:21, videoInfo=Video_crawler_info(id=3, type=Youtube_video, url=https://www.youtube.com/watch?v=THtYnK2-TQ4, active=1, msisdn=0349006629, categoryId=1121), status=1, media_path=/home/anhquan/VideoCrawler/Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4)
+2022-06-06 14:34:21 INFO  VideoItemDaoImpl:38 - UpdateVideoItem|Exception : PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1
+org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1542)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:35)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$eb2d3bd.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:166)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLException: Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 14:38:10 INFO  VideoCrawlerServiceImpl:106 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 14:38:17 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 2
+2022-06-06 14:38:17 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=U-xjYyIOPAs, -f, mp4]
+2022-06-06 14:38:56 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 1
+2022-06-06 14:38:56 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=THtYnK2-TQ4, -f, mp4]
+2022-06-06 14:39:13 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4
+2022-06-06 14:39:13 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4
+2022-06-06 14:39:13 INFO  VideoCrawlerServiceImpl:156 - video title : Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4
+2022-06-06 14:39:13 INFO  VideoCrawlerServiceImpl:165 - VideoItem : Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=THtYnK2-TQ4, title=Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4, download_time=06-06-2022 14:39:13, videoInfo=Video_crawler_info(id=3, type=Youtube_video, url=https://www.youtube.com/watch?v=THtYnK2-TQ4, active=1, msisdn=0349006629, categoryId=1121), status=1, media_path=/home/anhquan/VideoCrawler/Video 7s cực chất để làm ảnh đại diện avatar video Facebook Chí Bảo.mp4)
+2022-06-06 14:39:13 INFO  VideoItemDaoImpl:38 - UpdateVideoItem|Exception : PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1
+org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1542)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:35)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$a432232f.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:166)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLException: Incorrect string value: '\xE1\xBB\xB1c c...' for column 'title' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 14:43:32 INFO  VideoCrawlerServiceImpl:106 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 14:43:38 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 2
+2022-06-06 14:43:38 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=U-xjYyIOPAs, -f, mp4]
+2022-06-06 14:43:56 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 14:43:56 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4
+2022-06-06 14:43:56 INFO  VideoCrawlerServiceImpl:156 - video title : 3 Second Countdown Video #shorts.mp4
+2022-06-06 14:43:56 INFO  VideoCrawlerServiceImpl:165 - VideoItem : Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=U-xjYyIOPAs, title=3 Second Countdown Video #shorts.mp4, download_time=06-06-2022 14:43:56, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=1, media_path=/home/anhquan/VideoCrawler/3 Second Countdown Video #shorts.mp4)
+2022-06-06 14:43:56 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=1O0yazhqaxs, -f, mp4]
+2022-06-06 14:44:02 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 14:44:02 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 14:44:02 INFO  VideoCrawlerServiceImpl:156 - video title : 3 Second Video.mp4
+2022-06-06 14:44:02 INFO  VideoCrawlerServiceImpl:165 - VideoItem : Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=1O0yazhqaxs, title=3 Second Video.mp4, download_time=06-06-2022 14:44:02, videoInfo=Video_crawler_info(id=4, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5JyvTrFChqge221RPMexU5xLV, active=1, msisdn=0349006629, categoryId=1121), status=1, media_path=/home/anhquan/VideoCrawler/3 Second Video.mp4)
+2022-06-06 14:48:09 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 1
+2022-06-06 14:48:09 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=urZ0bhF9bB4, -f, mp4]
+2022-06-06 14:48:23 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/Giới thiệu CoinVlog (Video 5s).mp4
+2022-06-06 14:48:23 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/Giới thiệu CoinVlog (Video 5s).mp4
+2022-06-06 14:48:23 INFO  VideoCrawlerServiceImpl:156 - video title : Giới thiệu CoinVlog (Video 5s).mp4
+2022-06-06 14:48:23 INFO  VideoCrawlerServiceImpl:165 - VideoItem : Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=urZ0bhF9bB4, title=Giới thiệu CoinVlog (Video 5s).mp4, download_time=06-06-2022 14:48:23, videoInfo=Video_crawler_info(id=3, type=Youtube_video, url=https://www.youtube.com/watch?v=urZ0bhF9bB4, active=1, msisdn=0349006629, categoryId=1121), status=1, media_path=/home/anhquan/VideoCrawler/Giới thiệu CoinVlog (Video 5s).mp4)
+2022-06-06 14:48:23 INFO  VideoItemDaoImpl:38 - UpdateVideoItem|Exception : PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3
+org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1542)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:35)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$77280f89.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:166)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLException: Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 14:52:56 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 1
+2022-06-06 14:52:56 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=1O0yazhqaxs, -f, mp4]
+2022-06-06 14:53:02 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 14:53:02 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/3 Second Video.mp4
+2022-06-06 14:53:02 INFO  VideoCrawlerServiceImpl:156 - video title : 3 Second Video.mp4
+2022-06-06 14:53:02 INFO  VideoCrawlerServiceImpl:165 - VideoItem : Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=1O0yazhqaxs, title=3 Second Video.mp4, download_time=06-06-2022 14:53:02, videoInfo=Video_crawler_info(id=3, type=Youtube_video, url=https://www.youtube.com/watch?v=1O0yazhqaxs, active=1, msisdn=0349006629, categoryId=1121), status=1, media_path=/home/anhquan/VideoCrawler/3 Second Video.mp4)
+2022-06-06 15:02:25 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 1
+2022-06-06 15:02:25 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=urZ0bhF9bB4, -f, mp4]
+2022-06-06 15:02:39 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/Giới thiệu CoinVlog (Video 5s).mp4
+2022-06-06 15:02:39 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/Giới thiệu CoinVlog (Video 5s).mp4
+2022-06-06 15:02:39 INFO  VideoCrawlerServiceImpl:156 - video title : Giới thiệu CoinVlog (Video 5s).mp4
+2022-06-06 15:02:39 INFO  VideoCrawlerServiceImpl:165 - VideoItem : Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=urZ0bhF9bB4, title=Giới thiệu CoinVlog (Video 5s).mp4, download_time=06-06-2022 15:02:39, videoInfo=Video_crawler_info(id=3, type=Youtube_video, url=https://www.youtube.com/watch?v=urZ0bhF9bB4, active=1, msisdn=0349006629, categoryId=1121), status=1, media_path=/home/anhquan/VideoCrawler/Giới thiệu CoinVlog (Video 5s).mp4)
+2022-06-06 15:02:39 INFO  VideoItemDaoImpl:38 - UpdateVideoItem|Exception : PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3
+org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; SQL state [HY000]; error code [1366]; Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3; nested exception is java.sql.SQLException: Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1542)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:35)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$d593f252.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:166)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLException: Incorrect string value: '\xE1\xBB\x9Bi t...' for column 'title' at row 3
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 15:08:14 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 1
+2022-06-06 15:08:14 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=urZ0bhF9bB4, -f, mp4]
+2022-06-06 15:08:16 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : 
+2022-06-06 15:08:16 INFO  VideoCrawlerServiceImpl:153 - video|path : 
+2022-06-06 15:08:16 INFO  VideoCrawlerServiceImpl:156 - video title : 
+2022-06-06 15:08:16 INFO  VideoCrawlerServiceImpl:165 - VideoItem : Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=urZ0bhF9bB4, title=, download_time=06-06-2022 15:08:16, videoInfo=Video_crawler_info(id=3, type=Youtube_video, url=https://www.youtube.com/watch?v=urZ0bhF9bB4, active=1, msisdn=0349006629, categoryId=1121), status=1, media_path=)
+2022-06-06 15:09:25 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 1
+2022-06-06 15:09:25 INFO  VideoCrawlerServiceImpl:129 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=urZ0bhF9bB4, -f, mp4]
+2022-06-06 15:09:39 INFO  VideoCrawlerServiceImpl:150 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/Giới thiệu CoinVlog (Video 5s).mp4
+2022-06-06 15:09:39 INFO  VideoCrawlerServiceImpl:153 - video|path : /home/anhquan/VideoCrawler/Giới thiệu CoinVlog (Video 5s).mp4
+2022-06-06 15:09:39 INFO  VideoCrawlerServiceImpl:156 - video title : Giới thiệu CoinVlog (Video 5s).mp4
+2022-06-06 15:09:39 INFO  VideoCrawlerServiceImpl:165 - VideoItem : Video_crawler_item(id=0, url=https://www.youtube.com/watch?v=urZ0bhF9bB4, title=Giới thiệu CoinVlog (Video 5s).mp4, download_time=06-06-2022 15:09:39, videoInfo=Video_crawler_info(id=3, type=Youtube_video, url=https://www.youtube.com/watch?v=urZ0bhF9bB4, active=1, msisdn=0349006629, categoryId=1121), status=1, media_path=/home/anhquan/VideoCrawler/Giới thiệu CoinVlog (Video 5s).mp4)
+2022-06-06 15:22:46 INFO  VideoCrawlerServiceImpl:104 - IdVide|SIZE : 4 - IdVideo|Data : [j4Wa-HYdZg0, Vps3kfLpoxQ, z3YUrId57IA, 9odyYUS1xx4]
+2022-06-06 15:22:53 INFO  VideoCrawlerServiceImpl:115 - Queue.size  : 0
+2022-06-06 15:33:02 INFO  VideoCrawlerServiceImpl:106 - IdVide|SIZE : 4 - IdVideo|Data : [j4Wa-HYdZg0, Vps3kfLpoxQ, z3YUrId57IA, 9odyYUS1xx4]
+2022-06-06 15:33:09 INFO  VideoCrawlerServiceImpl:116 - Queue : [Ljava.lang.Object;@50d46bf7
+2022-06-06 15:33:09 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 0
+2022-06-06 15:45:46 INFO  VideoCrawlerServiceImpl:116 - Queue : [Ljava.lang.Object;@27266df7
+2022-06-06 15:45:46 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 4
+2022-06-06 15:46:30 INFO  VideoCrawlerServiceImpl:116 - Queue : [Video_crawler_item(id=61, url=https://www.youtube.com/watch?v=j4Wa-HYdZg0, title=null, download_time=null, videoInfo=Video_crawler_info(id=61, type=Youtube_channel, url=https://www.youtube.com/watch?v=j4Wa-HYdZg0, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=62, url=https://www.youtube.com/watch?v=Vps3kfLpoxQ, title=null, download_time=null, videoInfo=Video_crawler_info(id=62, type=Youtube_channel, url=https://www.youtube.com/watch?v=Vps3kfLpoxQ, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=63, url=https://www.youtube.com/watch?v=z3YUrId57IA, title=null, download_time=null, videoInfo=Video_crawler_info(id=63, type=Youtube_channel, url=https://www.youtube.com/watch?v=z3YUrId57IA, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=64, url=https://www.youtube.com/watch?v=9odyYUS1xx4, title=null, download_time=null, videoInfo=Video_crawler_info(id=64, type=Youtube_channel, url=https://www.youtube.com/watch?v=9odyYUS1xx4, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null)]
+2022-06-06 15:46:30 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 4
+2022-06-06 15:48:29 INFO  VideoCrawlerServiceImpl:116 - Queue : []
+2022-06-06 15:48:29 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 0
+2022-06-06 15:49:01 INFO  VideoCrawlerServiceImpl:116 - Queue : [Video_crawler_item(id=61, url=https://www.youtube.com/watch?v=j4Wa-HYdZg0, title=null, download_time=null, videoInfo=Video_crawler_info(id=1, type=Youtube_channel, url=https://www.youtube.com/watch?v=j4Wa-HYdZg0, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=62, url=https://www.youtube.com/watch?v=Vps3kfLpoxQ, title=null, download_time=null, videoInfo=Video_crawler_info(id=1, type=Youtube_channel, url=https://www.youtube.com/watch?v=Vps3kfLpoxQ, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=63, url=https://www.youtube.com/watch?v=z3YUrId57IA, title=null, download_time=null, videoInfo=Video_crawler_info(id=1, type=Youtube_channel, url=https://www.youtube.com/watch?v=z3YUrId57IA, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=64, url=https://www.youtube.com/watch?v=9odyYUS1xx4, title=null, download_time=null, videoInfo=Video_crawler_info(id=1, type=Youtube_channel, url=https://www.youtube.com/watch?v=9odyYUS1xx4, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null)]
+2022-06-06 15:49:01 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 4
+2022-06-06 15:51:02 INFO  VideoCrawlerServiceImpl:116 - Queue : [Video_crawler_item(id=61, url=https://www.youtube.com/watch?v=j4Wa-HYdZg0, title=null, download_time=null, videoInfo=Video_crawler_info(id=1, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5Jyt4Hzu_QmVc6CXuxpHfwJrU, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=62, url=https://www.youtube.com/watch?v=Vps3kfLpoxQ, title=null, download_time=null, videoInfo=Video_crawler_info(id=1, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5Jyt4Hzu_QmVc6CXuxpHfwJrU, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=63, url=https://www.youtube.com/watch?v=z3YUrId57IA, title=null, download_time=null, videoInfo=Video_crawler_info(id=1, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5Jyt4Hzu_QmVc6CXuxpHfwJrU, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null), Video_crawler_item(id=64, url=https://www.youtube.com/watch?v=9odyYUS1xx4, title=null, download_time=null, videoInfo=Video_crawler_info(id=1, type=Youtube_channel, url=https://www.youtube.com/playlist?list=PLlFMsbTg5Jyt4Hzu_QmVc6CXuxpHfwJrU, active=0, msisdn=0349006629, categoryId=1121), status=0, media_path=null)]
+2022-06-06 15:51:02 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 4
+2022-06-06 15:53:39 INFO  VideoItemDaoImpl:45 - UpdateVideoItem|Exception : PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'where clause'
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [UPDATE video_crawler_item SET title=?,download_time=?, status=? WHERE url like ?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'where clause'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.updateVideoItem(VideoItemDaoImpl.java:42)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$4bd8b029.updateVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:121)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 15:53:39 INFO  VideoCrawlerServiceImpl:132 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=j4Wa-HYdZg0, -f, mp4]
+2022-06-06 15:59:58 INFO  VideoCrawlerServiceImpl:106 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 15:59:58 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; bad SQL grammar [INSERT INTO video_crawler_item (url,video_crawler_info_id,status) VALUE (?,?,?)]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'field list'
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [INSERT INTO video_crawler_item (url,video_crawler_info_id,status) VALUE (?,?,?)]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$c19fabdb.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 15:59:58 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; bad SQL grammar [INSERT INTO video_crawler_item (url,video_crawler_info_id,status) VALUE (?,?,?)]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'field list'
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [INSERT INTO video_crawler_item (url,video_crawler_info_id,status) VALUE (?,?,?)]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$c19fabdb.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-06 16:00:05 INFO  VideoCrawlerServiceImpl:132 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=j4Wa-HYdZg0, -f, mp4]
+2022-06-06 16:00:58 INFO  VideoCrawlerServiceImpl:132 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=j4Wa-HYdZg0, -f, mp4]
+2022-06-06 16:03:05 INFO  VideoCrawlerServiceImpl:106 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
+2022-06-06 16:03:11 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 6
+2022-06-06 16:03:12 INFO  VideoCrawlerServiceImpl:132 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=j4Wa-HYdZg0, -f, mp4]
