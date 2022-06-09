@@ -64,27 +64,27 @@ public class VideoCrawlerServiceImpl {
                 videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
             } else if (videoInfo.getType().equals("Youtube_channel")) {
                 List<String> idVideo = getIdVideoChannelYoutube(videoInfo);
-                for (String id : idVideo) {
-                    String url = "https://www.youtube.com/watch?v=" + id;
-                    Video_crawler_item videoItem = new Video_crawler_item();
-                    videoItem.setUrl(url);
-                    videoItem.setVideoInfo(videoInfo);
-                    videoItemDao.saveVideoItem(videoItem);
-                }
-                videoInfo.setActive(1);
-                videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
+//                for (String id : idVideo) {
+//                    String url = "https://www.youtube.com/watch?v=" + id;
+//                    Video_crawler_item videoItem = new Video_crawler_item();
+//                    videoItem.setUrl(url);
+//                    videoItem.setVideoInfo(videoInfo);
+//                    videoItemDao.saveVideoItem(videoItem);
+//                }
+//                videoInfo.setActive(1);
+//                videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
             } else {
                 videoInfo.setActive(2);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
             }
         }
-        List<Video_crawler_item> videoItems=new ArrayList<>();
-        videoItems=videoItemDao.getVideoItems();
-        queue.addAll(videoItems);
+//        List<Video_crawler_item> videoItems=new ArrayList<>();
+//        videoItems=videoItemDao.getVideoItems();
+//        queue.addAll(videoItems);
     }
 
     private List<String> getIdVideoChannelYoutube(Video_crawler_info videoInfo) {
-        String commandTemplate = "youtube-dl --skip-download --flat-playlist --dump-json --playlist-start 1 --playlist-end 240 %SOURCE_PATH%"; //--sleep-interval 360
+        String commandTemplate = "youtube-dl --skip-download --flat-playlist --dump-json --playlist-start 1 --playlist-end 240 --max-filesize 100M %SOURCE_PATH%";
         String command = commandTemplate.replace("%SOURCE_PATH%", videoInfo.getUrl());
         try {
             Process proc = Runtime.getRuntime().exec(command);
@@ -101,7 +101,10 @@ public class VideoCrawlerServiceImpl {
             for (String line : lines) {
                 JsonNode jsonNode = objectMapper.readTree(line);
                 String id = jsonNode.get("id").asText();
-                idVideo.add(id);
+                Double duration=jsonNode.get("duration").asDouble();
+                if(duration < 420.0){
+                    idVideo.add(id);
+                }
             }
             logger.info("IdVide|SIZE : " + idVideo.size() + " - IdVideo|Data : " + idVideo);
             return idVideo;
@@ -190,7 +193,7 @@ public class VideoCrawlerServiceImpl {
             headers.set("mocha-api", "");
             headers.set("Accept-language", "vi");
             HttpEntity<MultiValueMap<String, Object>> request = new HttpEntity<>(map, headers);
-            Object obj = rest.postForEntity("http://freeapi.kakoak.tls.tl/video-service/v1/media/video/upload", request, Object.class);
+            Object obj = rest.postForEntity("http://kakoakdev.ringme.vn/video-service/v1/media/video/upload", request, Object.class); //freeapi.kakoak.tls.tl
 
             //find mediaPath of video after save on server
             String[] strings = obj.toString().split(",");

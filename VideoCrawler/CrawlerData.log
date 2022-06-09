@@ -2050,3 +2050,1365 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'url' in 'field list
 2022-06-06 16:03:05 INFO  VideoCrawlerServiceImpl:106 - IdVide|SIZE : 2 - IdVideo|Data : [U-xjYyIOPAs, 1O0yazhqaxs]
 2022-06-06 16:03:11 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 6
 2022-06-06 16:03:12 INFO  VideoCrawlerServiceImpl:132 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 3, https://www.youtube.com/watch?v=j4Wa-HYdZg0, -f, mp4]
+2022-06-07 09:03:43 INFO  VideoCrawlerServiceImpl:117 - Queue.size  : 139
+2022-06-07 09:03:43 INFO  VideoCrawlerServiceImpl:132 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 300, https://www.youtube.com/watch?v=UNgwa7OekXA, -f, mp4]
+2022-06-07 10:04:04 INFO  VideoCrawlerServiceImpl:153 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/Tui Tui Funny Video 😆tui tui best comedy😆tui tui Funny💪tui tui Must Watch Special new video.mp4
+2022-06-07 10:04:04 INFO  VideoCrawlerServiceImpl:156 - video|path : /home/anhquan/VideoCrawler/Tui Tui Funny Video 😆tui tui best comedy😆tui tui Funny💪tui tui Must Watch Special new video.mp4
+2022-06-07 10:04:04 INFO  VideoCrawlerServiceImpl:159 - video title : Tui Tui Funny Video tui tui best comedytui tui Funnytui tui Must Watch Special new video.mp4
+2022-06-07 10:04:04 INFO  VideoCrawlerServiceImpl:188 - DATA:{msisdn=[+67075600203], mpw=[9EBB7AE993E7FCDFA600E108CC21A259], fName=[Tui Tui Funny Video tui tui best comedytui tui Funnytui tui Must Watch Special new video.mp4], uFile=[file [/home/anhquan/VideoCrawler/Tui Tui Funny Video 😆tui tui best comedy😆tui tui Funny💪tui tui Must Watch Special new video.mp4]], timestamp=[1654571044341], security=[]}
+2022-06-07 10:04:36 INFO  VideoCrawlerServiceImpl:170 - Download|Exception : 413 Request Entity Too Large: "<html><EOL><EOL><head><title>413 Request Entity Too Large</title></head><EOL><EOL><body bgcolor="white"><EOL><EOL><center><h1>413 Request Entity Too Large</h1></center><EOL><EOL><hr><center>nginx</center><EOL><EOL></body><EOL><EOL></html><EOL><EOL>"
+org.springframework.web.client.HttpClientErrorException: 413 Request Entity Too Large: "<html><EOL><EOL><head><title>413 Request Entity Too Large</title></head><EOL><EOL><body bgcolor="white"><EOL><EOL><center><h1>413 Request Entity Too Large</h1></center><EOL><EOL><hr><center>nginx</center><EOL><EOL></body><EOL><EOL></html><EOL><EOL>"
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:145)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:168)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:122)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:819)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:777)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:468)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.callAPIUpload(VideoCrawlerServiceImpl.java:193)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:161)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-07 10:04:37 INFO  VideoCrawlerServiceImpl:132 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 300, https://www.youtube.com/watch?v=EmJNhaHUJx0, -f, mp4]
+2022-06-07 10:22:45 INFO  VideoCrawlerServiceImpl:153 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4
+2022-06-07 10:22:45 INFO  VideoCrawlerServiceImpl:156 - video|path : /home/anhquan/VideoCrawler/New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4
+2022-06-07 10:22:45 INFO  VideoCrawlerServiceImpl:159 - video title : New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4
+2022-06-07 10:22:45 INFO  VideoCrawlerServiceImpl:188 - DATA:{msisdn=[+67075600203], mpw=[9EBB7AE993E7FCDFA600E108CC21A259], fName=[New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4], uFile=[file [/home/anhquan/VideoCrawler/New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4]], timestamp=[1654572165358], security=[]}
+2022-06-07 10:22:45 INFO  VideoCrawlerServiceImpl:170 - Download|Exception : I/O error on POST request for "http://freeapi.kakoak.tls.tl/video-service/v1/media/video/upload": file [/home/anhquan/VideoCrawler/New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4] cannot be resolved in the file system for checking its content length; nested exception is java.io.FileNotFoundException: file [/home/anhquan/VideoCrawler/New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4] cannot be resolved in the file system for checking its content length
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://freeapi.kakoak.tls.tl/video-service/v1/media/video/upload": file [/home/anhquan/VideoCrawler/New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4] cannot be resolved in the file system for checking its content length; nested exception is java.io.FileNotFoundException: file [/home/anhquan/VideoCrawler/New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4] cannot be resolved in the file system for checking its content length
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:468)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.callAPIUpload(VideoCrawlerServiceImpl.java:193)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.crawlerAndUploadVideo(VideoCrawlerServiceImpl.java:161)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.FileNotFoundException: file [/home/anhquan/VideoCrawler/New Entertainment Top Funny Video Best Comedy in 2022 Episode 136 By Busy Fun Ltd.mp4] cannot be resolved in the file system for checking its content length
+	at org.springframework.core.io.FileSystemResource.contentLength(FileSystemResource.java:279)
+	at org.springframework.http.converter.ResourceHttpMessageConverter.getContentLength(ResourceHttpMessageConverter.java:121)
+	at org.springframework.http.converter.ResourceHttpMessageConverter.getContentLength(ResourceHttpMessageConverter.java:45)
+	at org.springframework.http.converter.AbstractHttpMessageConverter.addDefaultHeaders(AbstractHttpMessageConverter.java:260)
+	at org.springframework.http.converter.AbstractHttpMessageConverter.write(AbstractHttpMessageConverter.java:211)
+	at org.springframework.http.converter.FormHttpMessageConverter.writePart(FormHttpMessageConverter.java:541)
+	at org.springframework.http.converter.FormHttpMessageConverter.writeParts(FormHttpMessageConverter.java:517)
+	at org.springframework.http.converter.FormHttpMessageConverter.writeMultipart(FormHttpMessageConverter.java:497)
+	at org.springframework.http.converter.FormHttpMessageConverter.write(FormHttpMessageConverter.java:369)
+	at org.springframework.http.converter.FormHttpMessageConverter.write(FormHttpMessageConverter.java:156)
+	at org.springframework.web.client.RestTemplate$HttpEntityRequestCallback.doWithRequest(RestTemplate.java:991)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:774)
+	... 14 more
+2022-06-09 13:50:26 INFO  VideoCrawlerServiceImpl:109 - IdVide|SIZE : 140 - IdVideo|Data : [RvCz_zlkhA8, UNgwa7OekXA, EmJNhaHUJx0, D1d7-6z2-0k, WtV4yGZ_g8M, GtDoTGq2P1s, mr_oyw9NQVQ, RfcoG_lyXjk, rB11d4adONM, EXblG4Tfpgc, JIJ6f_-Tu2A, vxM2_HmhcJU, H8ckv9sGSd4, 3I29RLUaof0, OmSY86XKZnQ, wBfjHtfYdzY, xaTi_ZgGf_c, F1pK-3mpS4o, 7Ln8fgPzX74, Cwya0iNpwDo, RypJkXuNhgs, J-Z4VZ8whQM, evoCkpIIT1g, nRddcRnQGzM, nVY8iuc73LQ, VRn0g3cdhyM, vmNB3CvtMsM, QW7ooEGsPxA, 7ixsUIyKIE0, fexHdUZhocs, Xje4VhLUZWU, SbdbiZCQUJw, CWKcz1tdyLY, Yr6-4DAF3Fc, z0KTXSXIG_4, Lb3crhuOBGk, MsyQgyJbjns, 4bGuIa9iKvc, TmWjjYoSjkw, Pwtc2pXdvMc, 45Qso9NVqHk, rJNXzn-VeOo, 6KCkozTw8WE, WZY_A-M_93w, IWA1SN7u98Q, NE3JAjPDpig, zpZK6I_ntiw, EUs4FByLr_M, pWMgxwrS8bg, HUoSkUFamsM, HCvkjQhRhaI, n-ewK6_d_mY, aEAmSVkuAEM, U4Yf6wFfveo, k2EQ1APKy9M, okmMoj2Foaw, 3lskS0WRcsc, DbxmBOajuxQ, L7FWE_sFlJk, WZev8kINQUM, FyoeLdNzwlU, ungsM7jrdVs, nvaNb9erfsw, yR6Ks3eFcgY, 0KBqCJhocFY, -Uc3xuoBS0I, 2oFuDxtwTtY, bOL9r2qE6ec, gOKNg_H3edk, _Yzlll12pFw, dR5xA2tscx4, sINmVeFCXEw, ccT-mBNc6-4, 6d59FV1ry3c, SHZQTm56Als, BvyIa7wJ_lI, wYAp9ZGcb_E, BB1R716NFeI, aCrNt2Fp5bM, Cq83GLWQbHE, gvhN0SWzB_Y, j4Wa-HYdZg0, s-i7ti8ksRg, 0Hy8OfHUdAE, 36OIFKD7PQg, 4bIDkJ8csZo, 4AQsrMU2U7w, FMYTciGoUI4, 6chD5v4eM7U, Vps3kfLpoxQ, iWuSjTsq4xE, 5Atr_kfd6aI, RTig8_8tfio, d6wlIF12Y6k, 7LnqTgB_5cM, ymhYvyGXMio, y7ZAvOGSnx4, n02np1QwcbE, W83YR2uowPQ, weetyvjNcrY, lsGs4UiveXw, YgtZOu88swg, kBFSTu6XSdg, 0byDkQtJ8BQ, 3RB-DQrYDNQ, 8ojl55gElAQ, SU4O3iR5eCw, N5kJlPI8H3E, QOaTr22HVQQ, _Em_AqU5r58, BGH8hzVMf1g, n12oCfJnrfI, 9odyYUS1xx4, VIDutLD9CvE, aXGzwf_Zmdo, hNZ0Z39WD78, bs9MrjBFLwA, 6Jt9dkwDj6Q, j5GBq7T2CLE, CC5cjtf3iRo, wEeE6KSq_6w, EqTKtLRlUOw, cWFjhMgMBow, vPUkPg90w1g, r4H9ye6jGj8, z3YUrId57IA, KU7uWyeuw5w, LOJF1sjYFaw, IWUOV81Z-dk, MteyO-S5TiI, a8ZHIC5pDmo, sITHwrxOgm4, scuMeFvJ9JQ, CRnqmf-R7FQ, 98RVdqYF5TY, iAvAkqE8Pz4, FE8sGr_VubI, ZDDsBpYEXQc, -uDLyO1S_0s, kwuSewxRZBs]
+2022-06-09 13:50:50 INFO  VideoCrawlerServiceImpl:120 - Queue.size  : 141
+2022-06-09 13:50:51 INFO  VideoCrawlerServiceImpl:135 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 300, https://www.youtube.com/watch?v=QW7ooEGsPxA, -f, mp4]
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:105 - DURATION : 0.0
+2022-06-09 13:53:58 INFO  VideoCrawlerServiceImpl:110 - IdVide|SIZE : 140 - IdVideo|Data : [RvCz_zlkhA8, UNgwa7OekXA, EmJNhaHUJx0, D1d7-6z2-0k, WtV4yGZ_g8M, GtDoTGq2P1s, mr_oyw9NQVQ, RfcoG_lyXjk, rB11d4adONM, EXblG4Tfpgc, JIJ6f_-Tu2A, vxM2_HmhcJU, H8ckv9sGSd4, 3I29RLUaof0, OmSY86XKZnQ, wBfjHtfYdzY, xaTi_ZgGf_c, F1pK-3mpS4o, 7Ln8fgPzX74, Cwya0iNpwDo, RypJkXuNhgs, J-Z4VZ8whQM, evoCkpIIT1g, nRddcRnQGzM, nVY8iuc73LQ, VRn0g3cdhyM, vmNB3CvtMsM, QW7ooEGsPxA, 7ixsUIyKIE0, fexHdUZhocs, Xje4VhLUZWU, SbdbiZCQUJw, CWKcz1tdyLY, Yr6-4DAF3Fc, z0KTXSXIG_4, Lb3crhuOBGk, MsyQgyJbjns, 4bGuIa9iKvc, TmWjjYoSjkw, Pwtc2pXdvMc, 45Qso9NVqHk, rJNXzn-VeOo, 6KCkozTw8WE, WZY_A-M_93w, IWA1SN7u98Q, NE3JAjPDpig, zpZK6I_ntiw, EUs4FByLr_M, pWMgxwrS8bg, HUoSkUFamsM, HCvkjQhRhaI, n-ewK6_d_mY, aEAmSVkuAEM, U4Yf6wFfveo, k2EQ1APKy9M, okmMoj2Foaw, 3lskS0WRcsc, DbxmBOajuxQ, L7FWE_sFlJk, WZev8kINQUM, FyoeLdNzwlU, ungsM7jrdVs, nvaNb9erfsw, yR6Ks3eFcgY, 0KBqCJhocFY, -Uc3xuoBS0I, 2oFuDxtwTtY, bOL9r2qE6ec, gOKNg_H3edk, _Yzlll12pFw, dR5xA2tscx4, sINmVeFCXEw, ccT-mBNc6-4, 6d59FV1ry3c, SHZQTm56Als, BvyIa7wJ_lI, wYAp9ZGcb_E, BB1R716NFeI, aCrNt2Fp5bM, Cq83GLWQbHE, gvhN0SWzB_Y, j4Wa-HYdZg0, s-i7ti8ksRg, 0Hy8OfHUdAE, 36OIFKD7PQg, 4bIDkJ8csZo, 4AQsrMU2U7w, FMYTciGoUI4, 6chD5v4eM7U, Vps3kfLpoxQ, iWuSjTsq4xE, 5Atr_kfd6aI, RTig8_8tfio, d6wlIF12Y6k, 7LnqTgB_5cM, ymhYvyGXMio, y7ZAvOGSnx4, n02np1QwcbE, W83YR2uowPQ, weetyvjNcrY, lsGs4UiveXw, YgtZOu88swg, kBFSTu6XSdg, 0byDkQtJ8BQ, 3RB-DQrYDNQ, 8ojl55gElAQ, SU4O3iR5eCw, N5kJlPI8H3E, QOaTr22HVQQ, _Em_AqU5r58, BGH8hzVMf1g, n12oCfJnrfI, 9odyYUS1xx4, VIDutLD9CvE, aXGzwf_Zmdo, hNZ0Z39WD78, bs9MrjBFLwA, 6Jt9dkwDj6Q, j5GBq7T2CLE, CC5cjtf3iRo, wEeE6KSq_6w, EqTKtLRlUOw, cWFjhMgMBow, vPUkPg90w1g, r4H9ye6jGj8, z3YUrId57IA, KU7uWyeuw5w, LOJF1sjYFaw, IWUOV81Z-dk, MteyO-S5TiI, a8ZHIC5pDmo, sITHwrxOgm4, scuMeFvJ9JQ, CRnqmf-R7FQ, 98RVdqYF5TY, iAvAkqE8Pz4, FE8sGr_VubI, ZDDsBpYEXQc, -uDLyO1S_0s, kwuSewxRZBs]
+2022-06-09 13:54:03 INFO  VideoCrawlerServiceImpl:121 - Queue.size  : 1
+2022-06-09 13:54:03 INFO  VideoCrawlerServiceImpl:136 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 300, https://www.youtube.com/watch?v=QW7ooEGsPxA, -f, mp4]
+2022-06-09 14:01:49 INFO  VideoCrawlerServiceImpl:157 - MediaPath|DATA : [download] Destination: /home/anhquan/VideoCrawler/Funniest Fun Comedy Video 2021😂amazing comedy video 2021 Episode 129 By Busy Fun Ltd.mp4
+2022-06-09 14:01:49 INFO  VideoCrawlerServiceImpl:160 - video|path : /home/anhquan/VideoCrawler/Funniest Fun Comedy Video 2021😂amazing comedy video 2021 Episode 129 By Busy Fun Ltd.mp4
+2022-06-09 14:01:49 INFO  VideoCrawlerServiceImpl:163 - video title : Funniest Fun Comedy Video 2021amazing comedy video 2021 Episode 129 By Busy Fun Ltd.mp4
+2022-06-09 14:08:36 INFO  VideoCrawlerServiceImpl:109 - IdVide|SIZE : 140 - IdVideo|Data : [RvCz_zlkhA8, UNgwa7OekXA, EmJNhaHUJx0, D1d7-6z2-0k, WtV4yGZ_g8M, GtDoTGq2P1s, mr_oyw9NQVQ, RfcoG_lyXjk, rB11d4adONM, EXblG4Tfpgc, JIJ6f_-Tu2A, vxM2_HmhcJU, H8ckv9sGSd4, 3I29RLUaof0, OmSY86XKZnQ, wBfjHtfYdzY, xaTi_ZgGf_c, F1pK-3mpS4o, 7Ln8fgPzX74, Cwya0iNpwDo, RypJkXuNhgs, J-Z4VZ8whQM, evoCkpIIT1g, nRddcRnQGzM, nVY8iuc73LQ, VRn0g3cdhyM, vmNB3CvtMsM, QW7ooEGsPxA, 7ixsUIyKIE0, fexHdUZhocs, Xje4VhLUZWU, SbdbiZCQUJw, CWKcz1tdyLY, Yr6-4DAF3Fc, z0KTXSXIG_4, Lb3crhuOBGk, MsyQgyJbjns, 4bGuIa9iKvc, TmWjjYoSjkw, Pwtc2pXdvMc, 45Qso9NVqHk, rJNXzn-VeOo, 6KCkozTw8WE, WZY_A-M_93w, IWA1SN7u98Q, NE3JAjPDpig, zpZK6I_ntiw, EUs4FByLr_M, pWMgxwrS8bg, HUoSkUFamsM, HCvkjQhRhaI, n-ewK6_d_mY, aEAmSVkuAEM, U4Yf6wFfveo, k2EQ1APKy9M, okmMoj2Foaw, 3lskS0WRcsc, DbxmBOajuxQ, L7FWE_sFlJk, WZev8kINQUM, FyoeLdNzwlU, ungsM7jrdVs, nvaNb9erfsw, yR6Ks3eFcgY, 0KBqCJhocFY, -Uc3xuoBS0I, 2oFuDxtwTtY, bOL9r2qE6ec, gOKNg_H3edk, _Yzlll12pFw, dR5xA2tscx4, sINmVeFCXEw, ccT-mBNc6-4, 6d59FV1ry3c, SHZQTm56Als, BvyIa7wJ_lI, wYAp9ZGcb_E, BB1R716NFeI, aCrNt2Fp5bM, Cq83GLWQbHE, gvhN0SWzB_Y, j4Wa-HYdZg0, s-i7ti8ksRg, 0Hy8OfHUdAE, 36OIFKD7PQg, 4bIDkJ8csZo, 4AQsrMU2U7w, FMYTciGoUI4, 6chD5v4eM7U, Vps3kfLpoxQ, iWuSjTsq4xE, 5Atr_kfd6aI, RTig8_8tfio, d6wlIF12Y6k, 7LnqTgB_5cM, ymhYvyGXMio, y7ZAvOGSnx4, n02np1QwcbE, W83YR2uowPQ, weetyvjNcrY, lsGs4UiveXw, YgtZOu88swg, kBFSTu6XSdg, 0byDkQtJ8BQ, 3RB-DQrYDNQ, 8ojl55gElAQ, SU4O3iR5eCw, N5kJlPI8H3E, QOaTr22HVQQ, _Em_AqU5r58, BGH8hzVMf1g, n12oCfJnrfI, 9odyYUS1xx4, VIDutLD9CvE, aXGzwf_Zmdo, hNZ0Z39WD78, bs9MrjBFLwA, 6Jt9dkwDj6Q, j5GBq7T2CLE, CC5cjtf3iRo, wEeE6KSq_6w, EqTKtLRlUOw, cWFjhMgMBow, vPUkPg90w1g, r4H9ye6jGj8, z3YUrId57IA, KU7uWyeuw5w, LOJF1sjYFaw, IWUOV81Z-dk, MteyO-S5TiI, a8ZHIC5pDmo, sITHwrxOgm4, scuMeFvJ9JQ, CRnqmf-R7FQ, 98RVdqYF5TY, iAvAkqE8Pz4, FE8sGr_VubI, ZDDsBpYEXQc, -uDLyO1S_0s, kwuSewxRZBs]
+2022-06-09 14:09:13 INFO  VideoCrawlerServiceImpl:120 - Queue.size  : 141
+2022-06-09 14:09:13 INFO  VideoCrawlerServiceImpl:135 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 300, https://www.youtube.com/watch?v=QW7ooEGsPxA, -f, mp4]
+2022-06-09 14:17:44 INFO  VideoCrawlerServiceImpl:109 - IdVide|SIZE : 140 - IdVideo|Data : [RvCz_zlkhA8, UNgwa7OekXA, EmJNhaHUJx0, D1d7-6z2-0k, WtV4yGZ_g8M, GtDoTGq2P1s, mr_oyw9NQVQ, RfcoG_lyXjk, rB11d4adONM, EXblG4Tfpgc, JIJ6f_-Tu2A, vxM2_HmhcJU, H8ckv9sGSd4, 3I29RLUaof0, OmSY86XKZnQ, wBfjHtfYdzY, xaTi_ZgGf_c, F1pK-3mpS4o, 7Ln8fgPzX74, Cwya0iNpwDo, RypJkXuNhgs, J-Z4VZ8whQM, evoCkpIIT1g, nRddcRnQGzM, nVY8iuc73LQ, VRn0g3cdhyM, vmNB3CvtMsM, QW7ooEGsPxA, 7ixsUIyKIE0, fexHdUZhocs, Xje4VhLUZWU, SbdbiZCQUJw, CWKcz1tdyLY, Yr6-4DAF3Fc, z0KTXSXIG_4, Lb3crhuOBGk, MsyQgyJbjns, 4bGuIa9iKvc, TmWjjYoSjkw, Pwtc2pXdvMc, 45Qso9NVqHk, rJNXzn-VeOo, 6KCkozTw8WE, WZY_A-M_93w, IWA1SN7u98Q, NE3JAjPDpig, zpZK6I_ntiw, EUs4FByLr_M, pWMgxwrS8bg, HUoSkUFamsM, HCvkjQhRhaI, n-ewK6_d_mY, aEAmSVkuAEM, U4Yf6wFfveo, k2EQ1APKy9M, okmMoj2Foaw, 3lskS0WRcsc, DbxmBOajuxQ, L7FWE_sFlJk, WZev8kINQUM, FyoeLdNzwlU, ungsM7jrdVs, nvaNb9erfsw, yR6Ks3eFcgY, 0KBqCJhocFY, -Uc3xuoBS0I, 2oFuDxtwTtY, bOL9r2qE6ec, gOKNg_H3edk, _Yzlll12pFw, dR5xA2tscx4, sINmVeFCXEw, ccT-mBNc6-4, 6d59FV1ry3c, SHZQTm56Als, BvyIa7wJ_lI, wYAp9ZGcb_E, BB1R716NFeI, aCrNt2Fp5bM, Cq83GLWQbHE, gvhN0SWzB_Y, j4Wa-HYdZg0, s-i7ti8ksRg, 0Hy8OfHUdAE, 36OIFKD7PQg, 4bIDkJ8csZo, 4AQsrMU2U7w, FMYTciGoUI4, 6chD5v4eM7U, Vps3kfLpoxQ, iWuSjTsq4xE, 5Atr_kfd6aI, RTig8_8tfio, d6wlIF12Y6k, 7LnqTgB_5cM, ymhYvyGXMio, y7ZAvOGSnx4, n02np1QwcbE, W83YR2uowPQ, weetyvjNcrY, lsGs4UiveXw, YgtZOu88swg, kBFSTu6XSdg, 0byDkQtJ8BQ, 3RB-DQrYDNQ, 8ojl55gElAQ, SU4O3iR5eCw, N5kJlPI8H3E, QOaTr22HVQQ, _Em_AqU5r58, BGH8hzVMf1g, n12oCfJnrfI, 9odyYUS1xx4, VIDutLD9CvE, aXGzwf_Zmdo, hNZ0Z39WD78, bs9MrjBFLwA, 6Jt9dkwDj6Q, j5GBq7T2CLE, CC5cjtf3iRo, wEeE6KSq_6w, EqTKtLRlUOw, cWFjhMgMBow, vPUkPg90w1g, r4H9ye6jGj8, z3YUrId57IA, KU7uWyeuw5w, LOJF1sjYFaw, IWUOV81Z-dk, MteyO-S5TiI, a8ZHIC5pDmo, sITHwrxOgm4, scuMeFvJ9JQ, CRnqmf-R7FQ, 98RVdqYF5TY, iAvAkqE8Pz4, FE8sGr_VubI, ZDDsBpYEXQc, -uDLyO1S_0s, kwuSewxRZBs]
+2022-06-09 14:17:44 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=UNgwa7OekXA' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=UNgwa7OekXA' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=UNgwa7OekXA' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=UNgwa7OekXA' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=UNgwa7OekXA' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:45 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=EmJNhaHUJx0' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=EmJNhaHUJx0' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=EmJNhaHUJx0' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=EmJNhaHUJx0' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=EmJNhaHUJx0' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:45 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=D1d7-6z2-0k' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=D1d7-6z2-0k' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=D1d7-6z2-0k' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=D1d7-6z2-0k' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=D1d7-6z2-0k' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:45 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=WtV4yGZ_g8M' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=WtV4yGZ_g8M' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=WtV4yGZ_g8M' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=WtV4yGZ_g8M' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=WtV4yGZ_g8M' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:45 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=GtDoTGq2P1s' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=GtDoTGq2P1s' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=GtDoTGq2P1s' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=GtDoTGq2P1s' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=GtDoTGq2P1s' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:45 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=mr_oyw9NQVQ' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=mr_oyw9NQVQ' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=mr_oyw9NQVQ' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=mr_oyw9NQVQ' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=mr_oyw9NQVQ' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:45 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=RfcoG_lyXjk' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=RfcoG_lyXjk' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=RfcoG_lyXjk' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=RfcoG_lyXjk' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=RfcoG_lyXjk' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:45 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=rB11d4adONM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=rB11d4adONM' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=rB11d4adONM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=rB11d4adONM' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=rB11d4adONM' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:45 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=EXblG4Tfpgc' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=EXblG4Tfpgc' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=EXblG4Tfpgc' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=EXblG4Tfpgc' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=EXblG4Tfpgc' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:46 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=JIJ6f_-Tu2A' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=JIJ6f_-Tu2A' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=JIJ6f_-Tu2A' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=JIJ6f_-Tu2A' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=JIJ6f_-Tu2A' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:46 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=vxM2_HmhcJU' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=vxM2_HmhcJU' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=vxM2_HmhcJU' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=vxM2_HmhcJU' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=vxM2_HmhcJU' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:46 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=H8ckv9sGSd4' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=H8ckv9sGSd4' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=H8ckv9sGSd4' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=H8ckv9sGSd4' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=H8ckv9sGSd4' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:46 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=3I29RLUaof0' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=3I29RLUaof0' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=3I29RLUaof0' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=3I29RLUaof0' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=3I29RLUaof0' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:46 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=OmSY86XKZnQ' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=OmSY86XKZnQ' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=OmSY86XKZnQ' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=OmSY86XKZnQ' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=OmSY86XKZnQ' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:46 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=wBfjHtfYdzY' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=wBfjHtfYdzY' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=wBfjHtfYdzY' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=wBfjHtfYdzY' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=wBfjHtfYdzY' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:46 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=xaTi_ZgGf_c' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=xaTi_ZgGf_c' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=xaTi_ZgGf_c' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=xaTi_ZgGf_c' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=xaTi_ZgGf_c' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:46 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=F1pK-3mpS4o' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=F1pK-3mpS4o' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=F1pK-3mpS4o' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=F1pK-3mpS4o' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=F1pK-3mpS4o' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:46 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=7Ln8fgPzX74' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=7Ln8fgPzX74' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=7Ln8fgPzX74' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=7Ln8fgPzX74' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=7Ln8fgPzX74' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:47 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=Cwya0iNpwDo' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=Cwya0iNpwDo' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=Cwya0iNpwDo' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=Cwya0iNpwDo' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=Cwya0iNpwDo' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:47 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=RypJkXuNhgs' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=RypJkXuNhgs' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=RypJkXuNhgs' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=RypJkXuNhgs' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=RypJkXuNhgs' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:47 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=J-Z4VZ8whQM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=J-Z4VZ8whQM' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=J-Z4VZ8whQM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=J-Z4VZ8whQM' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=J-Z4VZ8whQM' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:47 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=evoCkpIIT1g' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=evoCkpIIT1g' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=evoCkpIIT1g' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=evoCkpIIT1g' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=evoCkpIIT1g' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:47 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=nRddcRnQGzM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=nRddcRnQGzM' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=nRddcRnQGzM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=nRddcRnQGzM' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=nRddcRnQGzM' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:47 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=nVY8iuc73LQ' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=nVY8iuc73LQ' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=nVY8iuc73LQ' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=nVY8iuc73LQ' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=nVY8iuc73LQ' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:48 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=VRn0g3cdhyM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=VRn0g3cdhyM' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=VRn0g3cdhyM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=VRn0g3cdhyM' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=VRn0g3cdhyM' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:48 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=vmNB3CvtMsM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=vmNB3CvtMsM' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=vmNB3CvtMsM' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=vmNB3CvtMsM' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=vmNB3CvtMsM' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:17:48 INFO  VideoItemDaoImpl:33 - Save|InfoVideo|Exception : PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=QW7ooEGsPxA' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=QW7ooEGsPxA' for key 'url_video_item_UNIQUE'
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO video_crawler_item (url_video_item,video_crawler_info_id,status) VALUE (?,?,?)]; Duplicate entry 'https://www.youtube.com/watch?v=QW7ooEGsPxA' for key 'url_video_item_UNIQUE'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=QW7ooEGsPxA' for key 'url_video_item_UNIQUE'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl.saveVideoItem(VideoItemDaoImpl.java:30)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$FastClassBySpringCGLIB$$38c10785.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ringme.CrawlerData.dao.daoImpl.VideoItemDaoImpl$$EnhancerBySpringCGLIB$$99cf3728.saveVideoItem(<generated>)
+	at com.ringme.CrawlerData.service.serviceImpl.VideoCrawlerServiceImpl.getVideoCrawler(VideoCrawlerServiceImpl.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'https://www.youtube.com/watch?v=QW7ooEGsPxA' for key 'url_video_item_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 25 more
+2022-06-09 14:18:01 INFO  VideoCrawlerServiceImpl:120 - Queue.size  : 113
+2022-06-09 14:18:02 INFO  VideoCrawlerServiceImpl:135 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 300, https://www.youtube.com/watch?v=RvCz_zlkhA8, -f, mp4]
+2022-06-09 14:19:17 INFO  VideoCrawlerServiceImpl:120 - Queue.size  : 113
+2022-06-09 14:19:17 INFO  VideoCrawlerServiceImpl:135 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 300, https://www.youtube.com/watch?v=RvCz_zlkhA8, -f, mp4]
+2022-06-09 14:52:20 INFO  VideoCrawlerServiceImpl:109 - IdVide|SIZE : 0 - IdVideo|Data : []
+2022-06-09 14:52:27 INFO  VideoCrawlerServiceImpl:120 - Queue.size  : 113
+2022-06-09 14:52:28 INFO  VideoCrawlerServiceImpl:135 - Link|Download : [youtube-dl, -o, ~/VideoCrawler/%(title)s.%(ext)s, --sleep-interval, 300, https://www.youtube.com/watch?v=RvCz_zlkhA8, -f, mp4]
+2022-06-09 14:53:53 INFO  VideoCrawlerServiceImpl:109 - IdVide|SIZE : 0 - IdVideo|Data : []
+2022-06-09 14:54:00 INFO  VideoCrawlerServiceImpl:120 - Queue.size  : 0
+2022-06-09 14:54:15 INFO  VideoCrawlerServiceImpl:109 - IdVide|SIZE : 140 - IdVideo|Data : [RvCz_zlkhA8, UNgwa7OekXA, EmJNhaHUJx0, D1d7-6z2-0k, WtV4yGZ_g8M, GtDoTGq2P1s, mr_oyw9NQVQ, RfcoG_lyXjk, rB11d4adONM, EXblG4Tfpgc, JIJ6f_-Tu2A, vxM2_HmhcJU, H8ckv9sGSd4, 3I29RLUaof0, OmSY86XKZnQ, wBfjHtfYdzY, xaTi_ZgGf_c, F1pK-3mpS4o, 7Ln8fgPzX74, Cwya0iNpwDo, RypJkXuNhgs, J-Z4VZ8whQM, evoCkpIIT1g, nRddcRnQGzM, nVY8iuc73LQ, VRn0g3cdhyM, vmNB3CvtMsM, QW7ooEGsPxA, 7ixsUIyKIE0, fexHdUZhocs, Xje4VhLUZWU, SbdbiZCQUJw, CWKcz1tdyLY, Yr6-4DAF3Fc, z0KTXSXIG_4, Lb3crhuOBGk, MsyQgyJbjns, 4bGuIa9iKvc, TmWjjYoSjkw, Pwtc2pXdvMc, 45Qso9NVqHk, rJNXzn-VeOo, 6KCkozTw8WE, WZY_A-M_93w, IWA1SN7u98Q, NE3JAjPDpig, zpZK6I_ntiw, EUs4FByLr_M, pWMgxwrS8bg, HUoSkUFamsM, HCvkjQhRhaI, n-ewK6_d_mY, aEAmSVkuAEM, U4Yf6wFfveo, k2EQ1APKy9M, okmMoj2Foaw, 3lskS0WRcsc, DbxmBOajuxQ, L7FWE_sFlJk, WZev8kINQUM, FyoeLdNzwlU, ungsM7jrdVs, nvaNb9erfsw, yR6Ks3eFcgY, 0KBqCJhocFY, -Uc3xuoBS0I, 2oFuDxtwTtY, bOL9r2qE6ec, gOKNg_H3edk, _Yzlll12pFw, dR5xA2tscx4, sINmVeFCXEw, ccT-mBNc6-4, 6d59FV1ry3c, SHZQTm56Als, BvyIa7wJ_lI, wYAp9ZGcb_E, BB1R716NFeI, aCrNt2Fp5bM, Cq83GLWQbHE, gvhN0SWzB_Y, j4Wa-HYdZg0, s-i7ti8ksRg, 0Hy8OfHUdAE, 36OIFKD7PQg, 4bIDkJ8csZo, 4AQsrMU2U7w, FMYTciGoUI4, 6chD5v4eM7U, Vps3kfLpoxQ, iWuSjTsq4xE, 5Atr_kfd6aI, RTig8_8tfio, d6wlIF12Y6k, 7LnqTgB_5cM, ymhYvyGXMio, y7ZAvOGSnx4, n02np1QwcbE, W83YR2uowPQ, weetyvjNcrY, lsGs4UiveXw, YgtZOu88swg, kBFSTu6XSdg, 0byDkQtJ8BQ, 3RB-DQrYDNQ, 8ojl55gElAQ, SU4O3iR5eCw, N5kJlPI8H3E, QOaTr22HVQQ, _Em_AqU5r58, BGH8hzVMf1g, n12oCfJnrfI, 9odyYUS1xx4, VIDutLD9CvE, aXGzwf_Zmdo, hNZ0Z39WD78, bs9MrjBFLwA, 6Jt9dkwDj6Q, j5GBq7T2CLE, CC5cjtf3iRo, wEeE6KSq_6w, EqTKtLRlUOw, cWFjhMgMBow, vPUkPg90w1g, r4H9ye6jGj8, z3YUrId57IA, KU7uWyeuw5w, LOJF1sjYFaw, IWUOV81Z-dk, MteyO-S5TiI, a8ZHIC5pDmo, sITHwrxOgm4, scuMeFvJ9JQ, CRnqmf-R7FQ, 98RVdqYF5TY, iAvAkqE8Pz4, FE8sGr_VubI, ZDDsBpYEXQc, -uDLyO1S_0s, kwuSewxRZBs]
+2022-06-09 14:54:20 INFO  VideoCrawlerServiceImpl:120 - Queue.size  : 0
