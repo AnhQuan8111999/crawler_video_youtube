@@ -22,7 +22,7 @@ public class Video_crawler_item {
 
     private Video_crawler_info videoInfo;
 
-    private int status; // 0 - chua download,1- dang download , 2- download va upload xong, 3- upload khong thanh cong
+    private int status; // 0 - chua download,1- dang download , 2- download va upload xong, 3- file lon hon 250M =>upload video khong thanh cong
 
     private String media_path;
 

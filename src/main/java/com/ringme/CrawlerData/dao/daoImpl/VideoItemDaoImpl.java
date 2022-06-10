@@ -53,7 +53,8 @@ public class VideoItemDaoImpl implements VideoItemDao {
         List<Video_crawler_item> videoItems=new ArrayList<>();
         String sql="SELECT * FROM video_crawler_item item\n" +
                 "INNER JOIN kakoak.video_crawler_info info " +
-                "WHERE item.video_crawler_info_id =info.id_video_info AND item.status in (0,1)";
+                "WHERE item.video_crawler_info_id =info.id_video_info AND item.status in (0,1) " +
+                "ORDER BY RAND()  LIMIT 5";
         videoItems=jdbcTemplate.query(sql, new RowMapper<Video_crawler_item>() {
             @Override
             public Video_crawler_item mapRow(ResultSet rs, int rowNum) throws SQLException {

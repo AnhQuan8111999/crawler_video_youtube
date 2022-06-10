@@ -64,23 +64,20 @@ public class VideoCrawlerServiceImpl {
                 videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
             } else if (videoInfo.getType().equals("Youtube_channel")) {
                 List<String> idVideo = getIdVideoChannelYoutube(videoInfo);
-//                for (String id : idVideo) {
-//                    String url = "https://www.youtube.com/watch?v=" + id;
-//                    Video_crawler_item videoItem = new Video_crawler_item();
-//                    videoItem.setUrl(url);
-//                    videoItem.setVideoInfo(videoInfo);
-//                    videoItemDao.saveVideoItem(videoItem);
-//                }
-//                videoInfo.setActive(1);
-//                videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
+                for (String id : idVideo) {
+                    String url = "https://www.youtube.com/watch?v=" + id;
+                    Video_crawler_item videoItem = new Video_crawler_item();
+                    videoItem.setUrl(url);
+                    videoItem.setVideoInfo(videoInfo);
+                    videoItemDao.saveVideoItem(videoItem);
+                }
+                videoInfo.setActive(1);
+                videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
             } else {
                 videoInfo.setActive(2);
                 videoCrawlerDao.updateVideoCrawlerInfo(videoInfo);
             }
         }
-//        List<Video_crawler_item> videoItems=new ArrayList<>();
-//        videoItems=videoItemDao.getVideoItems();
-//        queue.addAll(videoItems);
     }
 
     private List<String> getIdVideoChannelYoutube(Video_crawler_info videoInfo) {
@@ -114,8 +111,11 @@ public class VideoCrawlerServiceImpl {
         }
     }
 
-    @Scheduled(fixedDelay = 43200000, initialDelay = 10000) // method is called after 12h
+    @Scheduled(fixedDelay = 300000, initialDelay = 10000) // method is called after 12h
     private void crawlerAndUploadVideo() {
+        List<Video_crawler_item> videoItems=new ArrayList<>();
+        videoItems=videoItemDao.getVideoItems();
+        queue.addAll(videoItems);
 //        logger.info("Queue : "+ queue.toString());
         logger.info("Queue.size  : "+ queue.size());
         Video_crawler_item videoItem=new Video_crawler_item();
@@ -127,6 +127,8 @@ public class VideoCrawlerServiceImpl {
             commands.add("youtube-dl");
             commands.add("-o");
             commands.add("~/VideoCrawler/%(title)s.%(ext)s");
+            commands.add("--max-filesize");
+            commands.add("250m");
             commands.add("--sleep-interval");
             commands.add("300");
             commands.add(videoItem.getUrl());
@@ -160,17 +162,24 @@ public class VideoCrawlerServiceImpl {
                 int count2 = mediaPath.lastIndexOf("/");
                 videoItem.setTitle(Validation.validateFileName(mediaPath.substring(count2 + 1).trim()));
                 logger.info("video title : " + videoItem.getTitle());
-
-                callAPIUpload(videoItem);
-
                 LocalDateTime localTime = LocalDateTime.now();
                 DateTimeFormatter FormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
                 String time = localTime.format(FormatObj);
                 videoItem.setDownload_time(time);
+
+                try{
+                    callAPIUpload(videoItem);
+                }catch(Exception e){
+                    logger.info("UploadVideo|Exception : "+ e.getMessage());
+                    videoItem.setStatus(4);
+                    videoItemDao.updateVideoItem(videoItem);
+                    continue;
+                }
+
                 videoItem.setStatus(2);
                 videoItemDao.updateVideoItem(videoItem);
             } catch (Exception e) {
-                logger.info("Download|Exception : " + e.getMessage(), e);
+                logger.info("Download|Exception : " + e.getMessage());
                 videoItem.setStatus(3);
                 videoItemDao.updateVideoItem(videoItem);
                 continue;
@@ -193,7 +202,7 @@ public class VideoCrawlerServiceImpl {
             headers.set("mocha-api", "");
             headers.set("Accept-language", "vi");
             HttpEntity<MultiValueMap<String, Object>> request = new HttpEntity<>(map, headers);
-            Object obj = rest.postForEntity("http://kakoakdev.ringme.vn/video-service/v1/media/video/upload", request, Object.class); //freeapi.kakoak.tls.tl
+            Object obj = rest.postForEntity("http://freeapi.kakoak.tls.tl/video-service/v1/media/video/upload", request, Object.class); //freeapi.kakoak.tls.tl
 
             //find mediaPath of video after save on server
             String[] strings = obj.toString().split(",");
@@ -217,7 +226,7 @@ public class VideoCrawlerServiceImpl {
             headers1.set("mocha-api", "");
             headers1.set("Accept-language", "en");
             HttpEntity<MultiValueMap<String, Object>> request1 = new HttpEntity<MultiValueMap<String, Object>>(map1, headers);
-            Object obj1 = rest.postForEntity("http://kakoakdev.ringme.vn/video-service/v1/user/video/create", request1, Object.class);
+            Object obj1 = rest.postForEntity("http://freeapi.kakoak.tls.tl/video-service/v1/user/video/create", request1, Object.class);
 
             logger.info("Obj = " + obj);
             logger.info("Obj1 = " + obj1);
