@@ -81,7 +81,7 @@ public class VideoCrawlerServiceImpl {
     }
 
     private List<String> getIdVideoChannelYoutube(Video_crawler_info videoInfo) {
-        String commandTemplate = "youtube-dl --skip-download --flat-playlist --dump-json --playlist-start 1 --playlist-end 240 --max-filesize 100M %SOURCE_PATH%";
+        String commandTemplate = "youtube-dl --skip-download --flat-playlist --dump-json --playlist-start 1 --playlist-end 240 %SOURCE_PATH%";
         String command = commandTemplate.replace("%SOURCE_PATH%", videoInfo.getUrl());
         try {
             Process proc = Runtime.getRuntime().exec(command);
@@ -167,19 +167,12 @@ public class VideoCrawlerServiceImpl {
                 String time = localTime.format(FormatObj);
                 videoItem.setDownload_time(time);
 
-                try{
-                    callAPIUpload(videoItem);
-                }catch(Exception e){
-                    logger.info("UploadVideo|Exception : "+ e.getMessage());
-                    videoItem.setStatus(4);
-                    videoItemDao.updateVideoItem(videoItem);
-                    continue;
-                }
+                callAPIUpload(videoItem);
 
                 videoItem.setStatus(2);
                 videoItemDao.updateVideoItem(videoItem);
             } catch (Exception e) {
-                logger.info("Download|Exception : " + e.getMessage());
+                logger.info("Upload|Exception : " + e.getMessage());
                 videoItem.setStatus(3);
                 videoItemDao.updateVideoItem(videoItem);
                 continue;
