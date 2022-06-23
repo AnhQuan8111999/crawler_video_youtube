@@ -160,7 +160,7 @@ public class VideoCrawlerServiceImpl {
                 videoItem.setMedia_path(mediaPath.substring(count1 + 1).trim());
                 logger.info("video|path : " + videoItem.getMedia_path());
                 int count2 = mediaPath.lastIndexOf("/");
-                videoItem.setTitle(Validation.validateFileName(mediaPath.substring(count2 + 1).trim()));
+                videoItem.setTitle(Validation.validateFileName(mediaPath.substring(count2 + 1).trim().replace(".mp4","")));
                 logger.info("video title : " + videoItem.getTitle());
                 LocalDateTime localTime = LocalDateTime.now();
                 DateTimeFormatter FormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
