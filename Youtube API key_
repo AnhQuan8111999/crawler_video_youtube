@@ -1,0 +1,35 @@
+Youtube API key:
+AIzaSyDDJZRa_YYvs04aV7duG0EUMNbdD06BLOk
+
+youtube-dl --write-info-json link
+
+playlist: youtube-dl -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' --sleep-interval 60 https://www.youtube.com/watch?v=aVMlPZDxd5U&list=PL6dKPqo8eR30tfOuTGw8C9MC_UJ02x4f5&ab_channel=RhymasticOfficial
+
+
+Download playlist from channel:
+youtube-dl -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/channel/UCuv-B7I_iyoSmtmnf7BCsPw/playlists
+
+youtube-dl -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/channel/UCLm_cWBmeC4AU8iGAN7JpeA
+
+Lọc danh sách :
+youtube-dl --skip-download --flat-playlist --dump-json --playlist-start 1 --playlist-end 10 https://www.facebook.com/watch/?v=671812087226318
+
+youtube-dl -o '/home/hieu/Hieu/Video/%(title)s.%(ext)s' https://www.facebook.com/watch?v=394593622502429
+
+/home/Hieu/Video/%(title)s.%(ext)s  https://www.youtube.com/playlist?list=PL6dKPqo8eR32Co_YBwSzFZBVNlwmZBMlQ
+
+
+
+
+
+
+1. tải video từ fb, youtobe làm theo hướng dẫn cài youtobedl trong link này 
+  https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
+  
+ - lệnh terminal tải video
+youtube-dl -o '/home/anhquan/Video/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/watch?v=GTzzTtP5k48&ab_channel=HYUNDAIHU%E1%BA%BE
+
+
+2. tải video từ tiktok làm theo hướng dẫn trong link này :
+    https://github.com/drawrowfly/tiktok-scraper/blob/master/README.md
+
